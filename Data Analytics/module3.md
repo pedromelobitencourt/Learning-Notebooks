@@ -52,3 +52,67 @@ Run some analysis that we've already thought about based on the questions of "as
 
 
 # The Data Analysis Toolbox
+
+Some data analysis tools are:
+
+* Spreadsheets
+* Query Languages for Databases
+* Visualization Tools
+
+## Spreadsheets
+
+Spreadsheet structure data in a meaninful way by letting you:
+
+* Collect, store, organize and sort data
+* Iddentify patterns and piece the data together in a way that works for each specific data project
+* Create excellent data visualizations
+
+### Formula
+
+Formula is a set of instructions that performs a specific calculation using the data in the spreadsheet
+
+* Add
+* Subtract
+* Average of a number set
+* Multiply
+* Divide
+
+
+### Function
+
+A preset command that automatically performs a specific process or task using the data in the spreadsheet.
+
+We can say that is a more efficient way of doing something that would take a lot of time
+
+
+## Query Languages
+
+A computer language that allows you to retrieve and manipulate data from a database
+
+* Allow analysts to isolate specific information from a database
+* Make it easier for you to learn and understand the requests made to databases
+* Allow analysts to select, create, add or download data from a database for analysis
+
+### SQL (Structured Query Language)
+
+It's a language that allows data analysts communicate with the database
+
+* Easy to understand
+* Works very well with all kinds of databases
+* Query is a more like a request
+
+
+## Data Visualization
+
+It's the graphical representantion of information.
+
+It helps the analysts communicate their insights to others in an effective and compelling way
+
+* Graphs
+* Maps
+* Tables
+
+Some data visualization tools are:
+
+* Tableau: create visuals that are very easy to understand
+* Looker: easy to create visuals based on the results
