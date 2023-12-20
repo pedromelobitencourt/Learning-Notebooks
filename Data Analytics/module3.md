@@ -116,3 +116,5 @@ Some data visualization tools are:
 
 * Tableau: create visuals that are very easy to understand
 * Looker: easy to create visuals based on the results
+
+![difference-between-spreadsheets-and-databases](/Data%20Analytics/assets/spreadsheets-databases-differences.png)
