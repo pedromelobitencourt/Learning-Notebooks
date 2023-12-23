@@ -175,3 +175,102 @@ Wait time happens when a truck driver from the third party logistics provider ar
 ## Problem: stop the machines from breaking down (finding patterns)
 
 One way data analysts can do this is by looking at patterns in the company's historical data. For example, they could investigate how and when a particular machine broke down in the past and then generate insights into what led to the breakage. In this case, the company saw pattern indicating that machines began breaking down at faster rates when maintenance wasn't kept up in 15 day cycles. They can then keep track of current conditions and intervene if any of these issues happen again
+
+## From hypothesis to outcome
+
+At its core, my job is about connecting the right user with the right message at the right time. The first step is really to get a broad sense of the certain pattern that's occurring. 
+
+So for example, we know that this particular segment of users is more responsive to this type of content. Once we're able to actually see this hypothesis through the data, we do **testing** to ensure that the hypothesis is actually correct. So for example, we would test sending these pieces of content to this segment of users, and actually verify within a **controlled environment** whether that response rate is actually higher for that type of content, or whether it isn't. 
+
+Once we're able to actually verify that hypothesis, we go back to the stakeholders, in this case, our marketers, and say, we've proven within a relatively high degree of certainty that this particular segment is more responsive to this type of content, and because of that, we're recommending that you produce more of this type of content. 
+
+Our stakeholders really get to see the whole evolution from hypothesis to proven concept, and they're able to come with us on the journey on how we're proving out these hypotheses and then eventually turning them into strategies and recommendations for the business. The outcome in this case was that we were able to actually change the way our whole marketing team worked to actually make it much more user-centric
+
+
+# Craft Effective Questions
+
+* Leading Question: question that leads you to answer in a certain way
+
+* Closed-ended Question: question that can be answered by a simply "Yes" or "No". It rarely leads to valuable insights
+
+* Question that is to vague and lacks context: "Do you prefer vannila or chocolate?"
+
+
+The effective questions follow the SMART methodology:
+
+* S: specific
+* M: measurable
+* A: action-oriented
+* R: relevant
+* T: time-bound
+
+Effective questions should be simple, significant and focused on a single topic or few closed ideas
+
+If a question is too general, try to narrow it down by focusing on only one element:
+
+    For example, instead of asking a closed-ended question, like, "are kids getting enough physical activities these days?"
+    
+    Ask what percentage of kids achieve the recommended 60 minutes of physical activity at least five days a week?
+
+* Measurable questions can be qualified and assessed
+    * Unmeasurable example: Why did our recent video go viral?
+    * Mesuarable example: How many times was our video shared on social channels the first week it was posted?
+
+
+* Action-oriented question: encourages change
+
+* Relevant question: It matters, is important, and has significance to the problem you are trying to solve
+
+    Let's say you're working on a problem related to a threatened species of frog. And you asked, why does it matter that Pine Barrens tree frogs started disappearing? This is an irrelevant question because the answer won't help us find a way to prevent these frogs from going extinct. A more relevant question would be, what environmental factors changed in Durham, North Carolina between 1983 and 2004 that could cause Pine Barrens tree frogs to disappear from the Sandhills Regions? This question would give us answers we can use to help solve our problem
+
+* Time-bound question: specify the time to be studied
+
+    The time period we want to study is 1983 to 2004. This limits the range of possibilities and enables the data analyst to focus on relevant data
+
+![SMART-questions](/Data%20Analytics/Ask%20Questions%20Data-driven%20Decisions/assets/SMART-questions.png)
+
+
+## Examples of SMART questions
+
+Here's an example that breaks down the thought process of turning a problem question into one or more SMART questions using the SMART method: What features do people look for when buying a new car?
+
+* Specific: Does the question focus on a particular car feature?
+
+* Measurable: Does the question include a feature rating system?
+
+* Action-oriented: Does the question influence creation of different or new feature packages?
+
+* Relevant: Does the question identify which features make or break a potential car purchase?
+
+* Time-bound: Does the question validate data on the most popular features from the last three years? 
+
+
+Questions should be open-ended. This is the best way to get responses that will help you accurately qualify or disqualify potential solutions to your specific problem. So, based on the thought process, possible SMART questions might be:
+
+* On a scale of 1-10 (with 10 being the most important) how important is your car having four-wheel drive?
+
+* What are the top five features you would like to see in a car package?
+
+* What features, if included with four-wheel drive, would make you more inclined to buy the car?
+
+* How much more would you pay for a car with four-wheel drive?
+
+* Has four-wheel drive become more or less popular in the last three years?
+
+
+## Things to avoid when asking questions
+
+**Leading questions:** questions that only have a particular response
+
+* Example: This product is too expensive, isn’t it?
+    * This is a leading question because it suggests an answer as part of the question. A better question might be, “What is your opinion of this product?” There are tons of answers to that question, and they could include information about usability, features, accessories, color, reliability, and popularity, on top of price. Now, if your problem is actually focused on pricing, you could ask a question like “What price (or price range) would make you consider purchasing this product?” This question would provide a lot of different measurable responses.
+
+**Closed-ended questions:** questions that ask for a one-word or brief response only
+
+* Example: Were you satisfied with the customer trial?
+    * This is a closed-ended question because it doesn’t encourage people to expand on their answer. It is really easy for them to give one-word responses that aren’t very informative. A better question might be, “What did you learn about customer experience from the trial.” This encourages people to provide more detail besides “It went well.”
+
+**Vague questions:** questions that aren’t specific or don’t provide context
+
+* Example: Does the tool work for you?
+    * This question is too vague because there is no context. Is it about comparing the new tool to the one it replaces? You just don’t know. A better inquiry might be, “When it comes to data entry, is the new tool faster, slower, or about the same as the old tool? If faster, how much time is saved? If slower, how much time is lost?” These questions give context (data entry) and help frame responses that are measurable (time).
