@@ -213,3 +213,53 @@ You have a lot of options here. Which visualizations you select depends on the d
 5. Create filters as needed
 
 Filters show certain data while hiding the rest of the data in a dashboard. This can be a big help to identify patterns while keeping the original data intact. It’s common for data analysts to use and share the same dashboard, but manage their part of it with a filter. To dig deeper into filters and find an example of filters in action, visit Tableau’s page on Filter Actions. This is a useful resource to save and come back to when you start practicing using filters in Tableau on your own.
+
+# Connect the data dots
+
+Small data are:
+
+* Specific
+* Short time-period
+* Day-to-day decisions
+
+Big data:
+
+* Large and less specific
+* Long time-period
+* Usually has to be broken down to be analyzed
+* Big decisions
+
+Mathematical thinks can help us see new perspectives that lead to solutions
+
+![small-versus-big-data](/Data%20Analytics/Ask%20Questions%20Data-driven%20Decisions/assets/small-big-data.png)
+
+
+## Big data challenges
+
+* A lot of organizations deal with data overload and way too much unimportant or irrelevant information. 
+
+* Important data can be hidden deep down with all of the non-important data, which makes it harder to find and use. This can lead to slower and more inefficient decision-making time frames.
+
+* The data you need isn’t always easily accessible. 
+
+* Current technology tools and solutions still struggle to provide measurable and reportable data. This can lead to unfair algorithmic bias. 
+
+* There are gaps in many big data business solutions
+
+
+## Big data benefits 
+
+* When large amounts of data can be stored and analyzed, it can help companies identify more efficient ways of doing business and save a lot of time and money.
+
+
+
+* Big data helps organizations spot the trends of customer buying patterns and satisfaction levels, which can help them create new products and solutions that will make customers happy.
+
+* By analyzing big data, businesses get a much better understanding of current market conditions, which can help them stay ahead of the competition.
+
+* As in our earlier social media example, big data helps companies keep track of their online presence—especially feedback, both good and bad, from customers. This gives them the information they need to improve and protect their brand.
+
+
+## Big data: volume, variety, velocity and veracity
+
+![big-data-velocity-volume-veracity-variety](/Data%20Analytics/Ask%20Questions%20Data-driven%20Decisions/assets/big-data-velocity-veracity-volume-variety.png)
