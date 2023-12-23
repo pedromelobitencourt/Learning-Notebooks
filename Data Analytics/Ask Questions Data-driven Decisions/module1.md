@@ -274,3 +274,5 @@ Questions should be open-ended. This is the best way to get responses that will 
 
 * Example: Does the tool work for you?
     * This question is too vague because there is no context. Is it about comparing the new tool to the one it replaces? You just don’t know. A better inquiry might be, “When it comes to data entry, is the new tool faster, slower, or about the same as the old tool? If faster, how much time is saved? If slower, how much time is lost?” These questions give context (data entry) and help frame responses that are measurable (time).
+
+* Data Engineer: a data analyst will work with a data engineer to turn that raw data into actionable pipelines
