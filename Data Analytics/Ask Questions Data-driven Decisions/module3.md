@@ -54,3 +54,39 @@ You start a formula with "=" sign in the cell that you want the calculation
 ## Errors and fixes
 
 * #DIV/0!: a formula is trying to divide a value in a cell by 0 or by an empty cell
+
+
+## Context
+
+In the data analysis world, numbers don't mean much without context
+
+Context is the condition in which something exists or happens. Context is important in data analytics because it helps you sift through huge amounts of disorganized data and turn it into something meaningful. The fact is, data has little value if it is not paired with context. 
+
+Some times our data is:
+
+* Descriptive: how much did we spend on travel last month?
+
+* Diagnostic: why did it happen?
+
+* Predictive: what will happen?
+
+* Prescriptive: how can we make it happen?
+
+
+As a data analyst, you must put data in context. Remain objective and recognize all sides of an argument before drawing conclusions
+
+If the analysis is not objective, the conclusions can be misleading
+
+Context can turn raw data into meaningful information. It is very important for data analysts to contextualize their data. This means giving the data perspective by defining it. To do this, you need to identify:
+
+* Who: the person or organization that created, collected, and/or funded the data collection
+
+* What: the things in the world that data could have an impact on
+
+* Where: the origin of the data
+
+* When: the time when the data was created or collected
+
+* Why: the motivation behind the creation or collection
+
+* How: the method used to create or collect it
