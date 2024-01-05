@@ -40,8 +40,14 @@ By seeing the correct pairs of input and desired output, the learning algorithm 
 
 It's given data that isn't associated with any output labels
 
+Data only comes with inputs, but not outputs to learn from. For this reason, the algorithm needs to find a structure in the data
+
 It has to find patterns or something interesting in unlabeled data
 
 It's called **unsupervised** because we're not trying to quote some right answer for every input
 
 * **Clustering**: it places the unlabeled data into different clusters, based on similar information
+
+* **Anomaly Detection**: find unusual data points
+
+* **Dimensionality Reduction**: compress data (usually from a big dataset) using fewer numbers
