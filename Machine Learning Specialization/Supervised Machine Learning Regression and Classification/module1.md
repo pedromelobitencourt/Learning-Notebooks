@@ -162,6 +162,35 @@ If we're in a top of a hill (starting point), we should ask: where should a do a
 
 You are going to repeat those 2 steps simultaneosly until it converges (reaches the local minimum - when *w* and *b* no longer change much)
 
+* **Converge**: slope = 0
+
 Here is the correct update implementation:
 
 ![gradient-descent-correct-update-implementation](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_update_implementation.png)
+
+Let's see an example with only *w*:
+
+1. ![gradient-descent-example-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_example1.png)
+    
+    * We could see the partial derivative as the linear tangent line
+
+### How to choose the Learning Rate (α)?
+
+The learning rate (α) will have a huge impact on the efficiency of the gradient descent
+
+If α is too small, you will decrease or increase *w* just a little bit (you will decrease or increase the cost of *J*, but very slowly) - You may need a lot of steps to get to the minimum
+
+![small-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_small_learning_rate.png)
+
+If α is too large, you will decrease or increase *w* A LOT - It can increase the distance of the minimum. You can get further and further from the local minimum
+
+So it can overshoot (never recach the minimum), that it, it may fail to converge (diverge)
+
+![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_large_learning_rate.png)
+
+
+What if your *w* is already at a local minimum, but there is a better local minimum or even a global minimum?
+
+![gradient-descent-already-on-local-minimum](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_already_on_local_minimum.png)
+
+As we approach a local minimum, we take smaller and smaller steps, because the partial derivative becomes smaller, so the update steps become smaller (so it doesn't matter if the learning rate is fixed)
