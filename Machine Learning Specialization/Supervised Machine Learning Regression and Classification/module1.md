@@ -111,3 +111,24 @@ It is also called the **Squared error cost function**
 It can be used other cost functions depending on the application
 
 We want to choose a *w* and *b* so that the J(w, b) is as smallest as possible, that is, values *w* and *b* that minimize J(w, b)
+
+
+## Cost Function Visualization
+
+When considering only the parameter *w* of the model function, it has a U shape like below:
+
+![cost-function-parameter-w](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/cost_function_U_shape.png)
+
+But what if we consider both parameters, *w* and *b*?
+
+![cost-function-parameters-w-and-b](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/cost_function_w_and_b.png)
+
+Now it is a 3D dimension graph, but it also has a "soup" shape
+
+We could use *contour plots* also to visualize the cost function *J(w, b)*. In it, each point of an elipse has the same value of *J*
+
+![contour-plot](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/contour_plot.png)
+
+The minimum *J* is at the center of the smallest elipse
+
+Instead of visually choosing the values, we could use an efficient algorithm that automatically finds the values of parameters *w* and *b* that give the best fit. This algorithm already exists and it is called **gradient descent**. Gradient descent and some variations of it are not only used for linear regression, but some of the biggest and most complex models in AI
