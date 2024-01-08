@@ -131,4 +131,37 @@ We could use *contour plots* also to visualize the cost function *J(w, b)*. In i
 
 The minimum *J* is at the center of the smallest elipse
 
-Instead of visually choosing the values, we could use an efficient algorithm that automatically finds the values of parameters *w* and *b* that give the best fit. This algorithm already exists and it is called **gradient descent**. Gradient descent and some variations of it are not only used for linear regression, but some of the biggest and most complex models in AI
+Instead of visually choosing the values, we could use an efficient algorithm that automatically finds the values of parameters *w* and *b* that give the best fit. This algorithm already exists and it is called **gradient descent**. Gradient descent and some variations of it are not only used for linear regression, but some of the biggest and most complex models in AI (such as: the most advanced neural network models - deep learning models)
+
+
+# Train the Model with Gradient Descent
+
+It's a more systematic way to find the values of *w* and *b*, that results in the smallest value of the cost function *J*
+
+We'll have some function *J(w, b)* and we want to minimize it. The cost function could have more than two parameters. For instance, *J(w1, w2, w3, w4, ..., wn, b)*
+
+* We start with some *w* and *b* - a common choice is to set them both to zero
+
+* Keep changing *w* and *b* to reduce *J(w, b)*
+
+* Until we settle at or near a minimum (there can be more than a minimum depending on the cost function)
+
+With a squared error cost function we always end up with a bow shape plot 
+
+If we're in a top of a hill (starting point), we should ask: where should a do a baby step in order to get to a valley as efficient as possible? - This baby step is called **the direction of steepest descent**. We end up in a **local minima**, not necessarilly the **global minima**
+
+![gradient-descent-steps](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_steps.png)
+
+## How to implement a Gradient Descent Algorithm
+
+1. ![gradient-descent-step-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_step1.png)
+    * **α**: learning rate - how big the step to go downhill
+    * **Derivative**: which direction to take the step
+
+2. ![gradient-descent-step-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_step2.png)
+
+You are going to repeat those 2 steps simultaneosly until it converges (reaches the local minimum - when *w* and *b* no longer change much)
+
+Here is the correct update implementation:
+
+![gradient-descent-correct-update-implementation](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_update_implementation.png)
