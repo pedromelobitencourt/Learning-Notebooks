@@ -117,17 +117,17 @@ We want to choose a *w* and *b* so that the J(w, b) is as smallest as possible, 
 
 When considering only the parameter *w* of the model function, it has a U shape like below:
 
-![cost-function-parameter-w](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/cost_function_U_shape.png)
+![cost-function-parameter-w](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/cost_function_U_shape.png)
 
 But what if we consider both parameters, *w* and *b*?
 
-![cost-function-parameters-w-and-b](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/cost_function_w_and_b.png)
+![cost-function-parameters-w-and-b](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/cost_function_w_and_b.png)
 
 Now it is a 3D dimension graph, but it also has a "soup" shape
 
 We could use *contour plots* also to visualize the cost function *J(w, b)*. In it, each point of an elipse has the same value of *J*
 
-![contour-plot](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/contour_plot.png)
+![contour-plot](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/contour_plot.png)
 
 The minimum *J* is at the center of the smallest elipse
 
@@ -150,15 +150,15 @@ With a squared error cost function we always end up with a bow shape plot
 
 If we're in a top of a hill (starting point), we should ask: where should a do a baby step in order to get to a valley as efficient as possible? - This baby step is called **the direction of steepest descent**. We end up in a **local minima**, not necessarilly the **global minima**
 
-![gradient-descent-steps](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_steps.png)
+![gradient-descent-steps](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_steps.png)
 
 ## How to implement a Gradient Descent Algorithm
 
-1. ![gradient-descent-step-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_step1.png)
+1. ![gradient-descent-step-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_step1.png)
     * **α**: learning rate - how big the step to go downhill
     * **Derivative**: which direction to take the step
 
-2. ![gradient-descent-step-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_step2.png)
+2. ![gradient-descent-step-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_step2.png)
 
 You are going to repeat those 2 steps simultaneosly until it converges (reaches the local minimum - when *w* and *b* no longer change much)
 
@@ -166,11 +166,11 @@ You are going to repeat those 2 steps simultaneosly until it converges (reaches 
 
 Here is the correct update implementation:
 
-![gradient-descent-correct-update-implementation](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_update_implementation.png)
+![gradient-descent-correct-update-implementation](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_update_implementation.png)
 
 Let's see an example with only *w*:
 
-1. ![gradient-descent-example-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_example1.png)
+1. ![gradient-descent-example-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_example1.png)
     
     * We could see the partial derivative as the linear tangent line
 
@@ -180,28 +180,28 @@ The learning rate (α) will have a huge impact on the efficiency of the gradient
 
 If α is too small, you will decrease or increase *w* just a little bit (you will decrease or increase the cost of *J*, but very slowly) - You may need a lot of steps to get to the minimum
 
-![small-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_small_learning_rate.png)
+![small-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_small_learning_rate.png)
 
 If α is too large, you will decrease or increase *w* A LOT - It can increase the distance of the minimum. You can get further and further from the local minimum
 
 So it can overshoot (never recach the minimum), that it, it may fail to converge (diverge)
 
-![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_large_learning_rate.png)
+![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_large_learning_rate.png)
 
 
 What if your *w* is already at a local minimum, but there is a better local minimum or even a global minimum?
 
-![gradient-descent-already-on-local-minimum](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_already_on_local_minimum.png)
+![gradient-descent-already-on-local-minimum](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_already_on_local_minimum.png)
 
 As we approach a local minimum, we take smaller and smaller steps, because the partial derivative becomes smaller, so the update steps become smaller (so it doesn't matter if the learning rate is fixed)
 
 
 ## Gradient Descent for Linear Regression
 
-1. ![gradient-descent-for-linear-regression-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_linear_regression_1.png)
+1. ![gradient-descent-for-linear-regression-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_linear_regression_1.png)
 
 2. Repeat until convergence
-    ![gradient-descent-for-linear-regression-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_linear_regression_2.png)
+    ![gradient-descent-for-linear-regression-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_linear_regression_2.png)
 
 
 Depending on where you initialize the parameters *w* and *b*, you can end up at different local minima.
@@ -210,7 +210,7 @@ However, if your cost function is a squared error cost function, it will never h
 
 ### Running the Gradient Descent Algorithm
 
-![running-gradient-descent](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_running.png)
+![running-gradient-descent](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_running.png)
 
 * **Batch**: each step of gradient descent uses **all** the training examples
 
