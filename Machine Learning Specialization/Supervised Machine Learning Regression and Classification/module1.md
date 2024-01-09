@@ -194,3 +194,24 @@ What if your *w* is already at a local minimum, but there is a better local mini
 ![gradient-descent-already-on-local-minimum](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_already_on_local_minimum.png)
 
 As we approach a local minimum, we take smaller and smaller steps, because the partial derivative becomes smaller, so the update steps become smaller (so it doesn't matter if the learning rate is fixed)
+
+
+## Gradient Descent for Linear Regression
+
+1. ![gradient-descent-for-linear-regression-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_linear_regression_1.png)
+
+2. Repeat until convergence
+    ![gradient-descent-for-linear-regression-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_linear_regression_2.png)
+
+
+Depending on where you initialize the parameters *w* and *b*, you can end up at different local minima.
+
+However, if your cost function is a squared error cost function, it will never have more than one local minimum. You can say that functions that only have one local minimum is called a **convex function**, so it will always converge to the global minimum
+
+### Running the Gradient Descent Algorithm
+
+![running-gradient-descent](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/gradient_descent_running.png)
+
+* **Batch**: each step of gradient descent uses **all** the training examples
+
+So, you can call the algorithm **Batch Gradient Descent**, although there is other gradient descent algorithms that uses only a **subset** of the training examples
