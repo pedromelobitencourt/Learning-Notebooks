@@ -183,3 +183,50 @@ In situations like this, an useful thing to do is to scale the features. This me
 It can speed up the Gradient Descent Algorithm very significantly
 
 ![with-feature-scaling](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/with_feature_scaling.png)
+
+## How to perform Feature Scaling
+
+One way is:
+
+    if 300 <= x <= 2000, you can divide x by 2000 (maximum x), so: 0.15 <= x <= 1
+
+Another way is to use **Mean Normalization**:
+
+    Rescale the features, so that they are centered around zero (in this way, they will have negative and positive values)
+
+    To do it:
+        * find the average (the mean: μ)
+        * x = (x - μ) / (maxX - minX) for every x
+
+
+Another way is to use **Z-score Normalization**:
+
+    First, calculate the **standard deviation** of the feature (σ) and the average (μ)
+
+    x = (x - μ) / σ for every x
+
+When performing a Feature Scaling, you want to:
+
+* Aim for about -1 <= x <= 1 for each feature x
+
+or
+
+* Aim for about -3 <= x <= 3
+
+Rescale when the feature ranges a lot, for instance from -100 to 100 in comparison with other features that ranges much less
+
+    0 <= x1 <= 3: okay, no rescaling
+
+    -2 <= x2 <= 0.5: okay, no rescaling
+
+    -100 <= x3 <= 100: too large, rescale
+
+    -0.001 <= x4 <= 0.001: too small, rescale
+
+    98.6 <= x5 <= 105: too large in comparison, rescale
+
+
+## Checking Gradient Descent for Convergence
+
+How can we tell if the gradient descent is converging, that is, helping you to find the best parameters?
+
