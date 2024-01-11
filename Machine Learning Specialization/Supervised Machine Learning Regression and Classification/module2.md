@@ -155,3 +155,31 @@ Some disvantages are:
 * It doesn't generalize to other learning algorithms
 
 * It's slow when number of features is large (> 10000)
+
+
+# Gradient Descent in Practice
+
+**Feature Scaling** is a technique that enables to Gradient Descent to run much faster
+
+For example, if a feature ranges from large numbers and another feature from small numbers, we have to determine great parameters *w* for both. If not, the result may not be reasonable
+
+![feature-scaling-example](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/feature_scaling1.png)
+
+
+For example:
+
+In a Scatterplot, the horizontal axis is in a much larger scale than the vertical one
+
+In a Contourplot, the horizontal axis has a much narrow range whereas the vertical axis takes on larger values
+
+![feature-scaling-example-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/feature_scaling2.png)
+
+In a case similar to that, when you run the gradient descent, because the contour is so narrow and so "tall", it may ended up bouncing back and forth for a long time before it can find the global minimum
+
+![without-feature-scaling](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/without_feature_scaling.png)
+
+In situations like this, an useful thing to do is to scale the features. This means performing some transformations in your training data, so that x<sub>1</sub> and x<sub>2</sub> will now range from 0 to 1
+
+It can speed up the Gradient Descent Algorithm very significantly
+
+![with-feature-scaling](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/with_feature_scaling.png)
