@@ -109,7 +109,49 @@ It calculates these computations one step at a time
 In a **single** step, it multiples each pair of *w* and *x*
 Then, after that, the computer takes those numbers and uses specialized hardware to add them all very efficiently
 
-It will run efficiently and **scale** well to large datasets
+It will run efficiently and **scale** well to large datasets or to train large models
 
 ![with-vectorization](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/with_vectorization.png)
 
+### Vectorization on Gradient Descent
+
+**Gradient Descent with Vectorization**
+
+![gradient-descent-with-vectorization-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/gradient_descent_with_vectorization1.png)
+
+![gradient-descent-with-vectorization-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/gradient_descent_with_vectorization2.png)
+
+It will be done all at once. It's very good for large datasets or to train large models
+
+
+**Gradient Descent without Vectorization**
+
+![gradient-descent-without-vectorization](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/gradient_descent_without_vectorization.png)
+
+
+## Gradient Descent for Multiple Linear Regression
+
+We have to repeat the following:
+
+![gradient-descent-formulas1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/gradient_descent_formulas1.png)
+
+![gradient-descent-formulas2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/gradient_descent_formulas2.png)
+
+*w* and *x* are now vectors
+
+
+### An Alternative to Gradient Descent (Normal Equation)
+
+* It only works for Linear Regression
+
+* Solve for *w* and *b* without iterations
+
+* It may be used in machine learning libraries that implement linear regression
+
+* Gradient Descent is the recommended method for finding parameters *w* and *b*
+
+Some disvantages are:
+
+* It doesn't generalize to other learning algorithms
+
+* It's slow when number of features is large (> 10000)
