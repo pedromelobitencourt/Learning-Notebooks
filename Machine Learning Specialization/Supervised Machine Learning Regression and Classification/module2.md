@@ -230,3 +230,43 @@ Rescale when the feature ranges a lot, for instance from -100 to 100 in comparis
 
 How can we tell if the gradient descent is converging, that is, helping you to find the best parameters?
 
+We could use a Learning Curve, that is, in the vertical axis is the cost function and, in the horizontal one, it's the number of iterations
+
+It helps you to see how your cost function is performing after each iteration of gradient descent
+
+If your gradient descent is working properly, then the cost function *J* should decrease after each iteration
+
+If *J* increases in, at least, one iteration, that means that either the α is chosen poorly (usually large α) or there is a bug in the code
+
+Also, by observing the Curve, you can see that, after some iterations, the curve is leveling off and is no longer decreasing much (the curve is almost flattening out, that is, it's almost converged)
+
+![learning-curve](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/learning_curve.png)
+
+
+Another way is to use **Automatic Convergence Test**
+
+Let ε be 10<sup>-3</sup>
+
+If *J(w, b)* decreases by <= ε in one iteration, declare convergence
+
+Finding the right ε, that is, the right threshold is pretty difficult, it's recommended to use the graphical way
+
+
+
+## Choosing the Right Learning Rate
+
+If α is too small, the gradient descent will run **very slowly**
+
+If α is too large, the gradient descent **may not** even converge
+
+If your Learning Curve went up and down a lot or, at least, once (after one iteration) it went up, that can mean that there is a **bug** in the code or the **learning rate α** is too large
+
+* **Tip**: with a small enough α, *J(w, b)* should decrease on every iteration. So set α a very small value to verify if the cost function is decreasing on every iteration. If not, that means that there is a bug in the code
+
+![learning-rate-problems-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/learning_rate_problems1.png)
+
+As well, try some values of α, such as: 0.001, 0.01, 0.1, 1... 
+
+For each value of α, you should run gradient descent to plot the cost function based on the number of iterations to determine which value that seems to decrease the cost rapidly and consistently
+
+Test really big α too to try to get the best one 
