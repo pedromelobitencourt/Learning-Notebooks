@@ -270,3 +270,49 @@ As well, try some values of α, such as: 0.001, 0.01, 0.1, 1...
 For each value of α, you should run gradient descent to plot the cost function based on the number of iterations to determine which value that seems to decrease the cost rapidly and consistently
 
 Test really big α too to try to get the best one 
+
+
+## Feature Engineering
+
+Choosing the right features is a critical step to making the algorithm work well
+
+**How can we choose or engineer the most appropriate features for our algorithm?**
+
+For example, imagine that we have two features to calculate the price of a house:
+* x1: frontage of the house
+* x2: depth of the house
+
+So, we'd have a function like this:
+f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + b
+
+But you may notice that the area of the land can be calculated by:
+* area = frontage * depth = x<sub>1</sub>x<sub>2</sub>
+
+The area of the land is more predictive of the price than the frontage and the depth as separate features. So, you create a **new feature**:
+* x<sub>3</sub> = x<sub>1</sub>x<sub>2</sub>
+
+Then you can have a model like:
+f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + w<sub>3</sub>x<sub>3</sub> + b
+
+* **Feature Engineering**: using intuition to design new features, by transforming or combining original features
+
+
+
+## Polynomial Regression
+
+This idea will let us fit curves, non-linear functions to our data
+
+Maybe a non-linear model like this:
+* f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub><sup>2</sup> + b
+
+But, in some moment, the parabola goes down and it doesn't make sense to the house price goes down if the size of it increases. Then, you may choose another function, like a cubic one
+
+* f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub><sup>2</sup> + w<sub>3</sub>x<sub>3</sub><sup>3</sup> + b
+
+![polynomial-regression-example2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/polynomial_regression1.png)
+
+It's a polynomial regression, because, at least, one feature is powered by n != 1. Because of this, you may need to feature scale, since the powered features can range a lot
+
+You could use a model like: 
+
+![polynomial-regression-example2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/polynomial_regression2.png)
