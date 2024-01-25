@@ -316,3 +316,132 @@ It's a polynomial regression, because, at least, one feature is powered by n != 
 You could use a model like: 
 
 ![polynomial-regression-example2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/polynomial_regression2.png)
+
+
+# Python, NumPy and Vectorization
+
+## Vectors
+
+Vectors are arrays of numbers. They are denoted with lower case bold letters such as **x**. 
+
+The number of elements in the array is often reffered to as the **dimension** or the **rank**
+
+The 0<sup>th</sup> element of the vector **x** is x<sub>0</sub>
+
+### NumPy Arrays
+
+It's an indexable, n-dimensional array containing elements of the same type
+
+A one-dimension or 1-D arrays has one index
+
+* **1-D array**, shape(n,): n elements index [0] through [n-1]
+
+### Vector Creation
+
+NumPy routines which allocate memory and fill arrays with value:
+
+```
+a = np.zeros(4) # a = [0. 0. 0. 0.], a.shape = (4,)
+a = np.zeros((4,)) # a = [0. 0. 0. 0.], a.shape = (4,)
+a = np.random.random_sample(4) # a.shape = (4,)
+```
+
+NumPy routines which allocate memory and fill arrays with value but do not accept shape as input argument
+
+```
+a = np.arange(4.) # a = [0. 1. 2. 3.], a.shape = (4,)
+a = np.random.rand(4) # a.shape = (4,)
+```
+
+NumPy routines which allocate memory and fill with user values:
+
+```
+a = np.array([5, 4, 3, 2]) # a = [5 4 3 2], a.shape = (4,)
+a = np.array([5., 4, 3, 2]) # a = [5. 4. 3. 2.], a.shape = (4,)
+```
+
+### Operations on Vectors
+
+* **Indexing**: referring to an element of an array by its position
+
+```
+# access an element
+a[2] # a[2] = 2, a[2].shape = ()
+
+# access the last element
+a[-1] # a[-1] = 9
+```
+
+
+* **Slicing**: getting a subset of elements from an array based on their indices
+
+```
+# access 5 consecutive elements (start:stop:step)
+c = a[2:7:1]
+
+# access all elements index 3 and above
+c = a[3:]
+```
+
+
+**There are some single vector operations**
+
+```
+a = np.array([1, 2, 3, 4])
+
+# negate the elements of a
+b = -a # [-1 -2 -3 -4]
+
+# sum all elements of a, returns a scalar
+b = np.sum(a) # 10
+
+# get the mean of a
+b = np.mean(a) # 2.5
+
+# power by 2 every element of a
+b = a**2 # [1 4 9 16]
+```
+
+
+**There are some binary vector operations**
+
+```
+a = np.array([ 1, 2, 3, 4])
+b = np.array([-1,-2, 3, 4])
+a + b # [0 0 6 8]
+```
+
+
+**Vector dot product**
+
+Faster than a *loop* implementation since it uses hardware parallelization
+
+```
+a = np.array([1, 2, 3, 4])
+b = np.array([-1, 4, 3, 2])
+c = np.dot(a, b) # 24
+```
+
+
+## Matrices
+
+Usually represented as a upper case bold letter, such as **X**
+
+### Matrix Creation
+
+```
+a = np.zeros((1, 5)) # a = [[0 0 0 0 0]], a.shape = (1,5)
+a = np.zeros((1, 1)) # a = [[0]], a.shape = (1, 1)
+
+# reshape(#rows, #columns): -1 to compute automatically
+a = np.arange(6).reshape(-1, 2) # [[0 1] [2 3] [4 5]]
+```
+
+
+### Operations on Matrices
+
+```
+# access an element
+a[2, 0] # a[2, 0] = 4, a[2, 0].shape = ()
+a[2] # a[2] = [4 5], a[2].shape(2,)
+```
