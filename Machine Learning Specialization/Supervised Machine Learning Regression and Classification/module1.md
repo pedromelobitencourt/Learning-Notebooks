@@ -2,7 +2,7 @@
 
 Machine Learning had grown up as a subfield of AI, in order to build intelligent machines
 
-Machine learn to do things by itself
+Machine learns to do things by itself
 
 * AGI (Artificial General Intelligence): machines as intelligent as normal people
 
@@ -112,6 +112,7 @@ It can be used other cost functions depending on the application
 
 We want to choose a *w* and *b* so that the J(w, b) is as smallest as possible, that is, values *w* and *b* that minimize J(w, b)
 
+If *w* is too large or too small, the cost increases rapidly
 
 ## Cost Function Visualization
 
@@ -133,6 +134,15 @@ The minimum *J* is at the center of the smallest elipse
 
 Instead of visually choosing the values, we could use an efficient algorithm that automatically finds the values of parameters *w* and *b* that give the best fit. This algorithm already exists and it is called **gradient descent**. Gradient descent and some variations of it are not only used for linear regression, but some of the biggest and most complex models in AI (such as: the most advanced neural network models - deep learning models)
 
+The gradient descent path makes steady (monotonic) progress towards its goal and the initial steps are much larger than the steps near the goal
+
+![contour-steps](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/contour_steps.png)
+
+Only when the training points are on a line that the cost function can be 0
+
+It's useful to plot the initial descent on a different scale than the final descent in a graph *cost* vs *iterations*
+
+![cost-versus-iterations](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/cost_iterations.png)
 
 # Train the Model with Gradient Descent
 
@@ -184,7 +194,11 @@ If α is too small, you will decrease or increase *w* just a little bit (you wil
 
 If α is too large, you will decrease or increase *w* A LOT - It can increase the distance of the minimum. You can get further and further from the local minimum
 
-So it can overshoot (never recach the minimum), that it, it may fail to converge (diverge)
+So it can overshoot (never reach the minimum), that it, it may fail to converge (diverge).
+
+For example, *w* and *b* may bounce back and forth between positive and negative with the absolute value increasing with each iteration
+
+![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_large_a2.png)
 
 ![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_large_learning_rate.png)
 
