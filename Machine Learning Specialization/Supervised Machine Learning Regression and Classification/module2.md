@@ -163,6 +163,8 @@ Some disvantages are:
 
 For example, if a feature ranges from large numbers and another feature from small numbers, we have to determine great parameters *w* for both. If not, the result may not be reasonable
 
+This also makes the algorithm to not consider a feature more important than other
+
 ![feature-scaling-example](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/feature_scaling1.png)
 
 
@@ -224,6 +226,36 @@ Rescale when the feature ranges a lot, for instance from -100 to 100 in comparis
     -0.001 <= x4 <= 0.001: too small, rescale
 
     98.6 <= x5 <= 105: too large in comparison, rescale
+
+To get the standard deviation using NumPy:
+
+```
+np.std(X, axis=0) # axis=0: vertical
+np.std(X, axis=1) # axis=1: horizontal
+
+# axis understanding
+
+a = np.array([[1, 2], [3, 4]])
+print(np.mean(a, axis=0)) # [2 3]
+print(np.mean(a, axis=1)) # [1.5 3.5]
+```
+
+
+Let's analyze these graphs that is trying to predict the house price based on *size*, *bedrooms*, *floors* and *age*:
+
+Plotting each feature vs. the target, price, provides some indication of which features have the **strongest influence** on price. Above, increasing size also increases price. Bedrooms and floors **don't seem** to have a strong impact on price. Newer houses have higher prices than older houses.
+
+![graphs-to-analyze](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/graphs_analysis.png)
+
+Process of **Z-score Normalization**:
+![z-score-process](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/z_score_process.png)
+
+
+* **Left**: Unnormalized - The range of values or the variance of the 'size(sqft)' feature is much larger than that of age
+
+* **Middle**: The first step removes the mean or average value from each feature. This leaves features that are centered around zero. It's difficult to see the difference for the 'age' feature, but 'size(sqft)' is clearly around zero.
+
+* **Right**: The second step divides by the standard deviation. This leaves both features centered at zero with a similar scale.
 
 
 ## Checking Gradient Descent for Convergence
@@ -295,6 +327,7 @@ Then you can have a model like:
 f(x) = w<sub>1</sub>x<sub>1</sub> + w<sub>2</sub>x<sub>2</sub> + w<sub>3</sub>x<sub>3</sub> + b
 
 * **Feature Engineering**: using intuition to design new features, by transforming or combining original features
+
 
 
 
