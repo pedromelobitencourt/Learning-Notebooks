@@ -4,7 +4,7 @@ With classification, the variable y can take on only one of a small possible val
 
 The problems that the variable y can only be one of two values (classes/categories) are called **binary classification**
 
-The classes *yes* and *no* can be represented as **true** and **false** or **1** and **0** or **presence** and **absence**
+The classes *yes* and *no* can be represented as **true** and **false** or **1** and **0** or **presence** and **absence**. In the case of linear regression *y* would not have been limited to 2 values, but could have been any value 
 
 The true class can be called the **positive class**, and the false class can be called the **negative class**
 
@@ -110,3 +110,57 @@ When z > 1, it predicts that *y* is 1
 When z < 1, it predicts that *y* is 0
 
 Logistic Regression can learn how to fit really complex data
+
+
+# Cost Function for Logistic Regression
+
+The *Squared Cost Function* is not an **ideal** cost function for Logistic Regression
+
+![logistic-regression-training-set](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/logistic_regression_training_set.png)
+
+Given this training set, how can we choose parameters *w* and *b*?
+
+If we use the Squared Error Cost Function for Logistic Regression, we would get something like this:
+
+![squared-error-cost-function-with-logistic-regression](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/squared_error_logistic_function.png)
+
+This is a non-convex cost function. If we try to use gradient descent, there are a lot of **local minima**, then it can be harder or impossible to get to the **global minima**.
+
+There is another cost function that can make the cost plot convex again, then the gradient descent is guaranteed to converge to the global minima.
+
+Let's call the term inside the summation of the squared error cost function (1/2(f<sub>w, b</sub>(x<sup>i</sup>, y<sup>i</sup>))) as LOSS on a single example
+
+* **Loss**: L(f<sub>w, b</sub>(x<sup>i</sup>, y<sup>i</sup>))
+
+The **Logistic Loss Function** is:
+
+![logistic-loss-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/logistic_loss_function.png)
+
+Let's analyze when **y = 1**:
+
+We are just interest when 0 <= y <= 1 of the function
+
+* If the model function predicts 1, then the loss is 0 (very close to the right answer)
+
+* If the model predicts 0.5, then the loss is a bit higher
+
+* If the model predicts 0.1, then the loss is almost infinity
+
+* Loss is lowest when f<sub>w, b</sub> (x<sup>i</sup>) predicts close to true label y<sup>i</sup>
+
+![logistic-loss-function1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/logistic_loss_function1.png)
+
+
+Let's analyze when **y = 0**:
+
+We are just interest when 0 <= y <= 1 of the function
+
+* If the model function predicts 0 or very close to 0, the loss will be very small (very close to zero)
+
+* If the model predicts 1, then the loss will be very high (close to infinity)
+
+The loss is the model **penalization**
+
+![logistic-loss-function2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/logistic_loss_function2.png)
+
+Now, the cost function will be **convex**, so the gradient descent will be able to take us to the global minimum

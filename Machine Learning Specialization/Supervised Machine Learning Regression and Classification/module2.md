@@ -351,6 +351,26 @@ You could use a model like:
 ![polynomial-regression-example2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/polynomial_regression2.png)
 
 
+Now, let's see an example. If we have 1 feature that should fit in a curve *y = x<sup>2</sup> + 1*, but we try the following: *f(x) = w<sub>0</sub>x<sub>0</sub> + b* and we get:
+
+![feature-engineering-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/feature_engineering1.png)
+
+That's not a good fit. We should look for something like: *y = w<sub>0</sub>x<sub>0</sub><sup>2</sup> + b* or a **polynomial feature**
+
+Above, we knew that x<sup>2</sup> was required. It may not be obvious what features are required. One could add a variety of potential features to try and find the most useful. For example, what if we had tried: *y = w<sub>0</sub>x<sub>0</sub> + w<sub>1</sub>x<sub>1</sub><sup>2</sup> + w<sub>2</sub>x<sub>2</sub><sup>3</sup> + b*?
+
+![feature-engineering2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module2/feature_engineering2.png)
+
+Gradient descent has emphasized the data that is the best fit to x<sup>2</sup> data by increasing w<sub>1</sub> term relative to the others
+
+* Gradient descent is picking the *correct* features for us by **emphasizing** its associated parameters
+
+Let's review this idea:
+
+* less weight value implies less important/correct feature, and in extreme, when the weight becomes zero or very close to zero, the associated feature is not useful in fitting the model to the data.
+
+* above, after fitting, the weight associated with the 𝑥2 feature is much larger than the weights for 𝑥 or 𝑥3 as it is the most useful in fitting the data. 
+
 # Python, NumPy and Vectorization
 
 ## Vectors
