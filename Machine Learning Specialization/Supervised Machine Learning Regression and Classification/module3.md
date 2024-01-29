@@ -164,3 +164,15 @@ The loss is the model **penalization**
 ![logistic-loss-function2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/logistic_loss_function2.png)
 
 Now, the cost function will be **convex**, so the gradient descent will be able to take us to the global minimum
+
+## Simplified Loss Function for Logistic Regression
+
+Remember that in our examples, y can only take the values of either one or zero
+
+It's **completely** the same thing as the other one (same result)
+
+![simplified-logistic-loss-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/simplified_logistic_loss_function1.png)
+
+![simplified-logistic-loss-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/simplified_logistic_loss_function2.png)
+
+This function was derived from statistics, using a statistics principle: **Maximum Likelihood Estimation**
