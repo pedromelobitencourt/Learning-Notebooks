@@ -176,3 +176,14 @@ It's **completely** the same thing as the other one (same result)
 ![simplified-logistic-loss-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/simplified_logistic_loss_function2.png)
 
 This function was derived from statistics, using a statistics principle: **Maximum Likelihood Estimation**
+
+
+# Gradient Descent for Logistic Regression
+
+We're going to find the values of parameters *w* and *b* that minimize the cost function *J*, applying **gradient descent** for it
+
+* *x<sub>j</sub>* is the jth feature
+
+![gradient-descent-logistic-regression-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/gradient_descent_logistic_regression1.png)
+
+![gradient-descent-logistic-regression-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/gradient_descent_logistic_regression2.png)
