@@ -206,6 +206,8 @@ We're going to find the values of parameters *w* and *b* that minimize the cost 
 ![overfitting-on-classification1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/overfitting_classification1.png)
 
 
+High order polynomial function may cause overfitting
+
 ## Addressing Overfitting
 
 1. Collect more training examples
@@ -246,3 +248,14 @@ If you observe with cautious, you notice that what regularization does is lightl
 ![regularization-on-cost-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularization_on_cost_function.png)
 
 ![regularized-linear-regression-question](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_linear_regression_question.png)
+
+
+### Regularized Logistic Regression
+
+![regularized-logistic-regression1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_logistic_regression1.png)
+
+To minimize the cost function, let's use the gradient descent
+
+We'll only regularize the parameters *w<sub>j</sub>*, but not the parameter *b*
+
+![regularized-logistic-regression2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_logistic_regression2.png)
