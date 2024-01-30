@@ -213,3 +213,36 @@ We're going to find the values of parameters *w* and *b* that minimize the cost 
 2. Select features to include/exclude (**feature selection**): the algorithm may overfit the training set if there are few data and you include all features
 
 3. **Regularization**: you could make a parameter of a feature smaller or bigger depending on its importance, allowing to have all the features. Usually, it doesn't make any difference to regularize the parameter *b*
+
+### Regularization
+
+If you have a lot of features, you may not know which are the most important features and which ones to penalize. So the way regularization is implemented is to penalize all of the features (all *w<sub>j</sub>* parameters)
+
+So to penalize them, we do the following to the cost function:
+
+![cost-function-regularization](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/cost_function_regularization.png)
+
+You could add: + (λ/2m)b<sup>2</sup>, but it makes little difference
+
+The first term is the **mean squared error** and its objective is to fit the data and the second part is the **regularization term** and its objective is to keep *w<sub>j</sub>* small to minimize the overfitting
+
+* **λ**: regularization parameter. λ > 0. It balances both goals: fit data and keep *w<sub>j</sub>* small
+
+If λ is very small, *w<sub>j</sub>* can be very large and the model may overfit the data
+
+If λ is very large, *w<sub>j</sub>* can be very small (close to zero), so it may underfit -> f(x) = b
+
+
+### Regularized Linear Regression
+
+Gradient descent for regularized linear regression is:
+
+![gradient-descent-for-regularized-linear-regression](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_gradient_descent_linear_regression.png)
+
+![gradient-descent-for-regularized-linear-regression](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_gradient_descent_linear_regression2.png)
+
+If you observe with cautious, you notice that what regularization does is lightly decrease the value of w<sub>j</sub>
+
+![regularization-on-cost-function](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularization_on_cost_function.png)
+
+![regularized-linear-regression-question](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/regularized_linear_regression_question.png)
