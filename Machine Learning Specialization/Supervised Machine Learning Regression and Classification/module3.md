@@ -187,3 +187,29 @@ We're going to find the values of parameters *w* and *b* that minimize the cost 
 ![gradient-descent-logistic-regression-1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/gradient_descent_logistic_regression1.png)
 
 ![gradient-descent-logistic-regression-2](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/gradient_descent_logistic_regression2.png)
+
+
+# The Problem of Overfitting
+
+* **Bias**: the algorithm has undefit the data. There is a clear pattern in the training data that the algorithm is just unable to capture
+
+* **Underfitting (high bias)**: when the model does not fit the training data set well
+
+* **Generalization**: when the model fits well the training set and even on other examples that are not in the set. We want that our algorithm **generalize** well (make good predictions even on brand new examples)
+
+* **Overfitting (high variance)**: when the model fits the training set extremely well. It doesn't look like that the model will generalize to new examples
+
+* Overfitting may cause the algorithm to perform poorly
+
+![overfitting-on-regression1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/overfitting_regression1.png)
+
+![overfitting-on-classification1](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module3/overfitting_classification1.png)
+
+
+## Addressing Overfitting
+
+1. Collect more training examples
+
+2. Select features to include/exclude (**feature selection**): the algorithm may overfit the training set if there are few data and you include all features
+
+3. **Regularization**: you could make a parameter of a feature smaller or bigger depending on its importance, allowing to have all the features. Usually, it doesn't make any difference to regularize the parameter *b*
