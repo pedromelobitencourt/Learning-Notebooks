@@ -208,6 +208,10 @@ We're going to find the values of parameters *w* and *b* that minimize the cost 
 
 High order polynomial function may cause overfitting
 
+Outliers (extreme examples) can increase overfitting
+
+Nominal values can reduce overfitting
+
 ## Addressing Overfitting
 
 1. Collect more training examples
