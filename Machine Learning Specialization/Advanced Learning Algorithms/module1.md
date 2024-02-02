@@ -69,3 +69,13 @@ When building your model, some decisions you have to make is: how many hidden la
 Multiple hidden layers are also called **multilayer perceptron**
 
 ![multiple-hidden-layers](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/multiple_hidden_layers1.png)
+
+Let's see a face recognition example:
+
+![face-recognition-example](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/face_recognition_example.png)
+
+In the first hidden layer, it may be neurons that are looking for very short lines or edges in the image
+
+In the second hidden layer, it may be neurons that might learn to group together lots of short lines or segments to look for parts faces
+
+In the third hidden layer, it may be neurons that are aggregating different parts of faces to detect a face
