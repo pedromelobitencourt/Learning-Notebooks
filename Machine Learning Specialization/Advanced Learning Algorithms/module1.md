@@ -79,3 +79,20 @@ In the first hidden layer, it may be neurons that are looking for very short lin
 In the second hidden layer, it may be neurons that might learn to group together lots of short lines or segments to look for parts faces
 
 In the third hidden layer, it may be neurons that are aggregating different parts of faces to detect a face
+
+
+# Neural Network Model
+
+Each neuron of a hidden layer is just implementing a logistic regression function
+
+Let's see how it is made a hidden layer neuron computation:
+
+![neural-network-hidden-layer-computations](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_hidden_layer_computations.png)
+
+Now, we're going to see how it is made a output layer neuron computation:
+
+![neural-network-output-layer-computations](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_output_layer_computations.png)
+
+After the last computations, if you're making a binary prediction, you can make a condition test to classificate the inputs depending on a threshold
+
+![neural-network-prediction](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_prediction.png)
