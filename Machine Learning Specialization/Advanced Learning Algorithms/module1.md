@@ -138,3 +138,40 @@ Now let's see how to build the model for number handwriting recognition (is it a
 
 ## Data in TensorFlow
 
+![numpy-matrix-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/numpy_matrix_1.png)
+
+All of these are 2D vectors, even if it's 1 x n matrix
+
+![numpy-matrix-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/numpy_matrix_2.png)
+
+## Building a Neural Network
+
+We can string together sequentially layers that we've created using **Sequential** command
+
+![building-a-neural-network-architecture](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/building_neural_network_architecture.png)
+
+As we know, to create the layers, we do:
+
+```
+layer_1 = Dense(units=3, activation="sigmoid")
+layer_2 = Dense(units=3, activation="sigmoid")
+```
+
+Then, to group together these layers, we do the following:
+
+```
+model = Sequential([layer_1, layer_2])
+```
+
+*x* and *y* are our training sets. To train the model, after we string together the needed layers, we do the following commands:
+
+```
+model.compile(...)
+model.fit(x, y)
+```
+
+Then, to predict some data we do the following:
+
+```
+model.predict(x_new)
+```
