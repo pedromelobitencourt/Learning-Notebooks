@@ -93,6 +93,48 @@ Now, we're going to see how it is made a output layer neuron computation:
 
 ![neural-network-output-layer-computations](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_output_layer_computations.png)
 
+The superscript is the number of the layer
+
+The subscript is the number of the current neuron of the layer
+
 After the last computations, if you're making a binary prediction, you can make a condition test to classificate the inputs depending on a threshold
 
 ![neural-network-prediction](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_prediction.png)
+
+We can call neurons as *hidden units*
+
+![neural-network-layer-notation](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/neural_network_layer_notation.png)
+
+*g* can also be called **activation function** (the activation function is not necessarily the sigmoid function)
+
+## Forward Propagation
+
+![forward-propagation-step1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_1.png)
+
+![forward-propagation-step2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_2.png)
+
+![forward-propagation-step3](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_3.png)
+
+
+# TensorFlow Implementation
+
+It's one of the leading frameworks to implementing deep learning algorithms
+
+**How can we implement inferencing code using TensorFlow?**
+
+One of the most remarkable things about neural network is that the same algorithm can be applied to so many different applications
+
+Let's see another example. Imagine you have a dataset that contains the duration and the temperature of coffee roasting as inputs and the output is whether the roasted coffee is good or not
+
+![coffee-roasting-example-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/coffee_roasting_example_1.png)
+
+![coffee-roasting-example-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/coffee_roasting_example_2.png)
+
+**Dense** is the type of the layer we are using. There are lots more types of layers
+
+Now let's see how to build the model for number handwriting recognition (is it a 1?):
+
+![handwriting-recognition-example-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/handwriting_recognition_1.png)
+
+## Data in TensorFlow
+
