@@ -175,3 +175,16 @@ Then, to predict some data we do the following:
 ```
 model.predict(x_new)
 ```
+
+
+# Neural Network Implementation in Python
+
+Let's see how to do a forward propagation using Numpy
+
+![forward-propagation-implementation-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_implementation1.png)
+
+Each column of *w* corresponds to an unit
+
+We can do it in a more general way:
+
+![forward-propagation-implementation-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_implementation2.png)
