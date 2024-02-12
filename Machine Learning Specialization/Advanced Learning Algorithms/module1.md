@@ -188,3 +188,35 @@ Each column of *w* corresponds to an unit
 We can do it in a more general way:
 
 ![forward-propagation-implementation-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/forward_propagation_implementation2.png)
+
+# AGI (Artificial General Intelligence)
+
+![AGI-vs-ANI](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/AGI-vs-ANI.png)
+
+# Vectorization
+
+![for-loops-vs-vectorization](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/vectorization1.png)
+
+There are exactly 2 ways of writing the same dot product:
+
+![dot-product-two-ways](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module1/dot_product.png)
+
+## Matrix Multiplication in Numpy
+
+To transpose a matrix, you do the following command:
+
+```
+A = np.array([1, -1, .1], [2, -2, .2])
+AT = A.T
+```
+
+To multiply matrices:
+
+```
+W = np.array([3, 5, 7, 9], [4, 6, 8, 0])
+Z = np.matmul(AT, W)
+
+# OR
+
+Z = AT @ W
+```
