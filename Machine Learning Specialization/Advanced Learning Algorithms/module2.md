@@ -79,3 +79,7 @@ Dense(units=1, activation='linear', name='l3')
 Usually, the most common activation function choice in hidden layers is ReLU
 
 The machine learning engineers often use the ReLU function, because it's faster to compute and because only the left side of the graph is completely flat, whereas the left and right side of sigmoid function are flat, then gradient descent will be really slow
+
+* If you use linear activation function in all units (hidden and output layers), the model will be equivalent to linear regression
+
+* If you use linear activation function in all units in hidden layers and sigmoid function in output layer, the model will be equivalent to logistic regression
