@@ -83,3 +83,45 @@ The machine learning engineers often use the ReLU function, because it's faster 
 * If you use linear activation function in all units (hidden and output layers), the model will be equivalent to linear regression
 
 * If you use linear activation function in all units in hidden layers and sigmoid function in output layer, the model will be equivalent to logistic regression
+
+
+# Multiclass Classification
+
+Multiclass Classification problems refer to classification problems that you can have more than 2 output labels
+
+![multiclass-classification-example](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/multiclass_classification_example.png)
+
+## Softmax
+
+The **Softmax** regression algorithm is a generalization of logistic regression (which is a binary classification algorithm) to the multiclass classification context
+
+![softmax-computation](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/softmax_computation.png)
+
+![softmax-cost-function](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/softmax_cost_function.png)
+
+
+### Using softmax to handwriting recognition of the numbers
+
+![softmax-handwriting-recognition](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/softmax_handwriting_recognition.png)
+
+Don't use the code below, because there's a better version of it
+
+1. Specify the model
+
+```
+model = Sequential([
+    Dense(units=25, activation='relu'),
+    Dense(units=15, activation='relu'),
+    Dense(units=10, activation='softmax')
+])
+```
+
+2. Specify the loss and cost
+
+```
+model.compile(loss=SparseCategoricalCrossentropy())
+```
+
+
+### Improved implementation of softmax
+
