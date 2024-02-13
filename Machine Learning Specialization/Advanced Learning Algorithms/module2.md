@@ -192,3 +192,24 @@ Given an input, there can be multiple outputs
 * Train one single neural network with 3 outputs
 
 ![multilabel-classification-example2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/multilabel_classification2.png)
+
+# Additional Neural Network Concepts
+
+**Gradient Descent** is an optimization algorithm that is widely used and was the foundation of many algorithms. But there are other optimization algorithms that are even better and faster than gradient descent
+
+An algorithm that is better and faster than the gradient descent is **Adam** algorithm. It automatically increases the learning rate α if we are taking tiny little steps in a similar direction over and over. However, if we are taking big steps (large α) and they don't follow a similar direction over and over, it decreases the learning rate α
+
+* **ADAM**: Adaptative Moment Estimation
+
+This algorithm uses a different learning rate α for every parameter of your model
+
+![adam-algorithm1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/adam_algorithm1.png)
+
+```
+# it's worth trying fewer values for this initial learning rate α
+
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
+    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True))
+```
+
+Adam algorithm is more robust than the gradient descent algorithm to the exact choice of learning rate that you pick, although it's worth tuning this variable
