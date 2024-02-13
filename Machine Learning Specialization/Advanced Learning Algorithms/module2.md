@@ -195,6 +195,8 @@ Given an input, there can be multiple outputs
 
 # Additional Neural Network Concepts
 
+## Advanced Optimization
+
 **Gradient Descent** is an optimization algorithm that is widely used and was the foundation of many algorithms. But there are other optimization algorithms that are even better and faster than gradient descent
 
 An algorithm that is better and faster than the gradient descent is **Adam** algorithm. It automatically increases the learning rate α if we are taking tiny little steps in a similar direction over and over. However, if we are taking big steps (large α) and they don't follow a similar direction over and over, it decreases the learning rate α
@@ -213,3 +215,15 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=1e-3),
 ```
 
 Adam algorithm is more robust than the gradient descent algorithm to the exact choice of learning rate that you pick, although it's worth tuning this variable
+
+## Additional Layer Types
+
+* **Convolutional Layer**: each neuron only looks at part of the previous layer's output
+    * It speeds up computation
+    * It needs less training data (less prone to overfitting)
+
+![convolutional-layer-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/convolutional_layer1.png)
+
+![convolutional-layer-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/convolutional_layer2.png)
+
+* **Dense Layer**: each neuron gets its inputs all the activations from the previous layer
