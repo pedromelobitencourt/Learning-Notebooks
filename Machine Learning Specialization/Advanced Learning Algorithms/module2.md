@@ -227,3 +227,44 @@ Adam algorithm is more robust than the gradient descent algorithm to the exact c
 ![convolutional-layer-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/convolutional_layer2.png)
 
 * **Dense Layer**: each neuron gets its inputs all the activations from the previous layer
+
+
+# Backpropagation
+
+## How is the derivative computed?
+
+![derivative-example-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/derivative_example1.png)
+
+![derivative-example-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/derivative_example2.png)
+
+**Compute derivative in Python**
+
+```
+import sympy
+
+J, w = sympy.symbols('J,w') # J and w are math symbols
+J = w**2 # function
+
+# Derivative
+dJ_dw = sympy.diff(J,w)
+
+# If w is 2
+dJ_dw.subs([w, 2])
+```
+
+
+## Computation Graph
+
+It's how programming frameworks like TensorFlow automatic compute derivatives of your neural network
+
+It's a set of nodes and edges
+
+![computation-graph-1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/computation_graph1.png)
+
+Computing the derivatives is a right-to-left process, that is why it's called **back prop**
+
+The first step of back prop will ask if the value of *d*, how much will the value of *J* chance?
+
+![computation-graph-2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/computation_graph2.png)
+
+Backprop is an efficient way to compute derivatives
