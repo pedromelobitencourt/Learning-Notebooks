@@ -125,3 +125,55 @@ model.compile(loss=SparseCategoricalCrossentropy())
 
 ### Improved implementation of softmax
 
+Because the computer has only finite amount of memory to store numbers, the result can have more or less numerical round-off error
+
+Although, the way we were using to calculate the cost function for softmax is correct, there is a different way of formulating it that reduces the numberical round-off errors leading to more accurate computations in tensorflow
+
+For Logistic Regression:
+
+```
+model = Sequential([
+    Dense(units=25, activation='sigmoid'),
+    Dense(units=15, activation='sigmoid'),
+    Dense(units=10, activation='linear')
+])
+
+# loss
+model.compile(loss=BinaryCrossentropy(from_logits=True))
+model.fit(X, Y, epochs=100)
+
+# fit
+logits = model(X)
+
+# predict
+f_x = tf.nn.softmax(logits)
+```
+
+It could be done in the previous way as well since numerical round-off error doesn't impact too much logistic regression, in contrast to softmax regression
+
+![logistic-regression-numerical-round-off-error](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/logistic_regression_numerical_round_off_error.png)
+
+
+For softmax regression:
+
+```
+model = Sequential([
+    Dense(units=25, activation='relu'),
+    Dense(units=15, activation='relu'),
+    Dense(units=10, activation='linear')
+])
+
+model.compile(loss=SparseCategoricalCrossEntropy(from_logits=True))
+
+# fit
+model.fit(X, Y, epochs=100)
+
+# predict
+logits = model(X)
+f_x = tf.nn.softmax(logits)
+```
+
+![softmax-numerical-round-off-error](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/softmax_numerical_round_off_error.png)
+
+This gives the TensorFlow the ability to rearrange terms and compute this in a more numerically **accurate** way
+
