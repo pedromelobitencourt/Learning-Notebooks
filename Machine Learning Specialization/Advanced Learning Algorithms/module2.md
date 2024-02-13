@@ -55,3 +55,27 @@ An activation function that is very used is *g(z) = max(0, z)*. This activation 
 ![common-activation-functions](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/common_activation_functions.png)
 
 Usually, when some teams are using Linear Activation Function, they say that they're not using any activation function
+
+## How to choose activation functions
+
+You can use different activation functions for different neurons in your neural network
+
+### Activation functions in the output layer
+
+When doing a **binary classification**, the sigmoid function will be the most natural choice on the output layer
+
+When trying to predict how much a stock price will variate today compared to yesterday, you could use a **linear activation function** (the output can be negative or positive)
+
+If you're predicting something that cannot have negative value, you could choose **ReLU** function (the output can only be positive)
+
+```
+Dense(units=1, activation='sigmoid', name='l1')
+Dense(units=1, activation='relu', name='l2')
+Dense(units=1, activation='linear', name='l3')
+```
+
+### Activation functions in the hidden layers
+
+Usually, the most common activation function choice in hidden layers is ReLU
+
+The machine learning engineers often use the ReLU function, because it's faster to compute and because only the left side of the graph is completely flat, whereas the left and right side of sigmoid function are flat, then gradient descent will be really slow
