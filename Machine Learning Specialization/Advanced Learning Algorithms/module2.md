@@ -177,3 +177,18 @@ f_x = tf.nn.softmax(logits)
 
 This gives the TensorFlow the ability to rearrange terms and compute this in a more numerically **accurate** way
 
+### Classification with multiple outputs
+
+* Also called as **multilabel classification**
+
+Given an input, there can be multiple outputs
+
+![multilabel-classification-example1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/multilabel_classification1.png)
+
+**How to builda multilabel classification model?**
+
+* You can treat each output as a separate machine learning problems
+
+* Train one single neural network with 3 outputs
+
+![multilabel-classification-example2](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/multilabel_classification2.png)
