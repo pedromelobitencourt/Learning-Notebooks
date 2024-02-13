@@ -45,3 +45,13 @@ There are three steps in the model training:
 
 There are a lot more loss function, such as: MeanSquaredError (for regression problems)
 
+
+# Activation Functions
+
+So far, we've been using only the sigmoid function as the activation function in the hidden and output layers. But if you use other activation functions, your neural network model can become much more powerful. For example, an unit can represent the awareness to a clothe and it can be low, popular, viral or completely viral. So, only 2 possible outputs are not wishable.
+
+An activation function that is very used is *g(z) = max(0, z)*. This activation functions is called **ReLU** (rectified linear unit)
+
+![common-activation-functions](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/common_activation_functions.png)
+
+Usually, when some teams are using Linear Activation Function, they say that they're not using any activation function
