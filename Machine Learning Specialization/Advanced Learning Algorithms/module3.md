@@ -62,3 +62,19 @@ So, let's sum up. We fit the parameters *w* and *b* using the training set, then
 Maybe for a handwriting recognition problem, we consider three different models. To help decide how many layers should do the neural network have and how many hidden units per layers should have, you can train three of these models and get some parameters *w* and *b*. Then, we can evaluate the neural network performance using *J<sub>cv</sub>* using our cross validation set. Then, we'd pick the model with the lowest cross validation error. Moreover, if we want to report an estimate of the generalization error, we would use the test set giving the *J<sub>test</sub>*
 
 Because we haven't made any decisions using the test set, it ensures that it is a fair and not optimistic estimate for generalization error
+
+
+# Bias and Variance
+
+Usually, a machine learning model doesn't work in the first try. So, what to do next? Looking at the algorithm bias and variance can give you very good guidance on what to try next
+
+* If *J<sub>train</sub>(w, b)* is high, then there is a high bias (underfit). *J<sub>cv</sub>(w, b)* will be also high
+
+* If *J<sub>train</sub>(w, b)* is low AND *J<sub>cv</sub>(w, b)* is much higher, then there is a high variance (overfit)
+
+* If *J<sub>train</sub>(w, b)* is low AND *J<sub>cv</sub>(w, b)* is also low, then it's "just right"
+
+![bias-variance](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/bias_variance_1.png)
+
+
+**High bias AND high variance** happens when in some part of the training set, the model uses a pretty complex function overfitting it and for other parts of the training set, it underfits it. You can notice it when *J<sub>train</sub>* is high and *J<sub>cv</sub>* is much higher than *J<sub>train</sub>*
