@@ -163,3 +163,36 @@ If you set a human level performance baseline, *J<sub>train</sub>* may (or not) 
 * Try smaller sets of features (lot of features gives the flexibility to fit very complicated models)
 
 * Try increasing λ (regularization parameter)
+
+
+## Bias/variance and Neural Networks
+
+Big data and neural networks give us new ways to address bias and variance
+
+* Large neural networks are low bias machines (you can almost always fit your training set well)
+
+**Not always applicable recippe**
+
+1. Ask: does it do well on the training set?
+    * No: high bias -> use a bigger neural network (more hidden layers and units), then repeat 1
+
+2. Ask: does it do well on the cross validation set?
+    * No: high variance -> get more data. Repeat 1
+
+3. Done!
+
+On the other hand, getting bigger neural network can be really computationally expensive (using GPU)
+
+Futhermore, getting more data, in a certain point, can be really hard
+
+A large neural network will usually do as well or better than a smaller one so long as regularization is chosen appropriately
+
+**Regularize a neural network in Python**
+
+```
+l1 = Dense(units=25, activation='relu', kernel_regularizer=L2(0.01))
+l2 = Dense(units=15, activation='relu', kernel_regularizer=L2(0.01))
+l3 = Dense(units=1, activation='sigmoid', kernel_regularizer=L2(0.01))
+```
+
+In neural network, we don't usually regularize the parameter *b* since it makes really little difference
