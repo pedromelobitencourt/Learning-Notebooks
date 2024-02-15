@@ -97,3 +97,50 @@ You could get a model f<sub>w, b</sub>(x), try different values of parameter λ 
 ![regularization-parameter](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/regularization_parameter_2.png)
 
 ![regularization-parameter-by-cost-functions](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/regularization_parameter_versus_cost_functions.png)
+
+
+## Establishing a baseline level of performance
+
+What is a high value of *J<sub>train</sub>* and *J<sub>cv</sub>*?
+
+Let's use as an example an application about speech recognition
+
+If your model has a training error *J<sub>train</sub>* of 10.8% and a cross validation error *J<sub>cv</sub>* of 14.8%, you may consider a bad performance since the training error is *high*. But it's good to consider the human performance as well. Then, you searches and concludes that the human level performance is 10.6%. This happens because of audio quality, noisy background... Then, instead of only regard the training error, you should also consider the human level performance. Even though, the *J<sub>cv</sub>* is much higher, so we may conclude that we have more a high variance problem than a high bias one.
+
+Then, it's helpful to establish a baseline level of performance
+
+* What is the level of error you can reasonably hope to get to?
+    * Human level performance (good benchmark when using unstructured data)
+    * Competing algorithms performances (previous implementation, competitor's one)
+    * Guess based on experience
+
+* If the difference between the baseline performance is much higher than the training error, you may say that you have **high bias performance**
+
+* If the difference between the training error is much higher than the cross validation error, you may say that you have **high variance performance**
+
+## Learning Curves
+
+Learning curves are a way to help understand how your learning algorithm is doing as a function of the amount of experience it has (examples)
+
+As the number of the training set gets bigger, the lower *J<sub>cv</sub>* gets and higher *J<sub>train</sub>* gets. As the size of the training set gets bigger, harder to fit all the training examples perfectly
+
+![learning-curves](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/learning_curves_1.png)
+
+**High bias case**
+
+As the training set size gets bigger, *J<sub>train</sub>* gets higher, but, in some moment, it starts to flat out, because there is no much change. Futhermore, *J<sub>cv</sub>* will get lower and also starts to flat out. 
+
+Moreover, if you had a human level performance as a baseline, you would have a big gap between *J<sub>train</sub>* performance.
+
+Now, imagine you get a bigger and bigger training set, the curves would still be flatten out, they will never find a way to dip down to this human level performance. So, **getting a bigger training set wouldn't help**
+
+![learning-curves-high-bias](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/learning_curves_high_bias.png)
+
+
+**High variance case**
+
+As your training set size gets bigger, higher the *J<sub>train</sub>* gets and lower the *J<sub>cv</sub>* gets, but there is still a huge gap between them
+
+If you set a human level performance baseline, *J<sub>train</sub>* may (or not) be lower than it, but probably really low. However, **if you have more training set examples, it can help a lot and the *J<sub>train</sub>* gets higher, but the *J<sub>cv</sub>* gets lower, so their gap gets really low**
+
+![learning-curves-high-variance](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/learning_curves_high_variance.png)
