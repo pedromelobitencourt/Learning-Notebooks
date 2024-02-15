@@ -144,3 +144,22 @@ As your training set size gets bigger, higher the *J<sub>train</sub>* gets and l
 If you set a human level performance baseline, *J<sub>train</sub>* may (or not) be lower than it, but probably really low. However, **if you have more training set examples, it can help a lot and the *J<sub>train</sub>* gets higher, but the *J<sub>cv</sub>* gets lower, so their gap gets really low**
 
 ![learning-curves-high-variance](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/learning_curves_high_variance.png)
+
+## Deciding what to do next
+
+**When your algorithm has high bias**
+
+* Try getting additional features
+
+* Try adding polynomial features
+
+* Try decreasing λ (regularization parameter)
+
+
+**When your algorithm has high variance**
+
+* Getting more training examples
+
+* Try smaller sets of features (lot of features gives the flexibility to fit very complicated models)
+
+* Try increasing λ (regularization parameter)
