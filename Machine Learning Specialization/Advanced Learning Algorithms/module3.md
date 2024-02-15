@@ -78,3 +78,22 @@ Usually, a machine learning model doesn't work in the first try. So, what to do 
 
 
 **High bias AND high variance** happens when in some part of the training set, the model uses a pretty complex function overfitting it and for other parts of the training set, it underfits it. You can notice it when *J<sub>train</sub>* is high and *J<sub>cv</sub>* is much higher than *J<sub>train</sub>*
+
+
+## Regularization and bias/variance
+
+Let's see how the choose of the parameter λ (regularization parameter) affects the bias and variance, therefore the overall performance of the algorithm
+
+* If λ is very very large, the model (in a linear regression case) will be a constant line, because it makes the parameter *w* be very very small (close to 0). So, f<sub>w, b</sub>(x) is close to b. **underfit (high bias)**
+
+* If λ is very small, there is almost no regularization, so it may end up with a curve that overfits the data. **overfit (high variance)**
+
+![regularization-parameter](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/regularization_parameter_1.png)
+
+Cross validation could help you choose the regularization parameter
+
+You could get a model f<sub>w, b</sub>(x), try different values of parameter λ and get the *J<sub>cv</sub>* of it using each value of λ. Then, you can get the option that gives the lowest value of *J<sub>cv</sub>*
+
+![regularization-parameter](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/regularization_parameter_2.png)
+
+![regularization-parameter-by-cost-functions](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/regularization_parameter_versus_cost_functions.png)
