@@ -230,3 +230,69 @@ Depending on the number of examples, you may not have the time to go through eac
 To prioritize a group of spam you can: get more data, try new features
 
 One con of error analysis is that is easier to do on applications that humans can do well. Otherwise, it can be very helpful
+
+## Adding more data
+
+Trying to get more data of all types can be **slow** and **expensive**, so it could be more helpful add more data of the types where error analysis **has indicated** it might help
+
+We can use also **Data Augmentation**. We modify an existing training example to create a new one. For instance, if your building a letter recognizer model, you could get an existing picture of the letter "A" and create new ones, rotating it, making it larger...
+
+You could use data augmentation also in speech recognition. You can get an original audio and add crowd noise to it for example
+
+**Usually does not help to add purely random/meaningless noise to your data**
+
+So, a good thing to think is: how can I modify, distort, warp or make more noise in the data, but in a way that what i get is quite similar to what I already have in the test set
+
+**Data Synthesis**: using artificial   data inputs to create a new training example. For example, in a photo OCR, you could screenshoot a random text in a text editor with different fonts, contrast...
+
+* **Conventional model-centric approach**: focus more on the code (algorithm and model)
+
+* **Data-centric approach**: focus more on the data
+
+## Transfer learning: using data from a different task
+
+It allows us to use data from a different task to help our application
+
+You could use a neural network that recognizes cats, dogs, people, cars... and use part of it in a neural network responsible to recognize handwritten digits. The idea is that, by learning to recognize cats, dogs, people, it would hopefully have learned some plausible sets of parameters for the earlier layers for processing image inputs. Then, by transferring these parameters to the new neural network, the new network starts off with parameters in a much better place
+
+![transfer-learning](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/transfer_learning_1.png)
+
+The input of both neural networks should be the same type
+
+![transfer-learning](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/transfer_learning_2.png)
+
+![transfer-learning](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/transfer_learning_3.png)
+
+## Full cycle of ML project
+
+![machine-learning-project-cycle](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/ml_project_cycle.png)
+
+Depending on the project, you may be able to use the deployment stage data to train and to improve the model
+
+### Deployment
+
+A common way to deploy the model would be to take your model and implement it in a server
+
+The server's job is to call your machine learning model in order to make predictions
+
+Software engineering may be needed for:
+
+* Ensure reliable and efficient predictions
+
+* Manage scaling
+
+* Logging
+
+* System monitoring
+
+**MLOps**: practice of how to build and deploy and maintain ML systems
+
+### Guidelines
+
+* Get a diverse team to brainstrome things that might go wrong, with emphasis on possible harm to vulnerable groups
+
+* Carry out literature search on standards for your industry
+
+* Audit systems against possible harm prior to development
+
+* Develop mitigation plan
