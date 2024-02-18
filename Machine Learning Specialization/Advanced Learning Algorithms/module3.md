@@ -196,3 +196,37 @@ l3 = Dense(units=1, activation='sigmoid', kernel_regularizer=L2(0.01))
 ```
 
 In neural network, we don't usually regularize the parameter *b* since it makes really little difference
+
+
+# Machine Learning Development Process
+
+## Iterative loop of ML development
+
+1. Choose architecture (model, data to use, pick the hyperparameters)
+
+2. Train a model
+
+3. Look at diagnostics (bias, variance, error analysis)
+
+4. Repeat if necessary
+
+### How to reduce your spam classifier's error?
+
+![reduce-spam-classifier-error](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/reduce_spam_classifier_error.png)
+
+## Error analysis
+
+The error analysis process refers to **manually** looking through the examples and **get insights** into where the model is going wrong
+
+* Find a set of examples that the algorithm has misclassified (from cross validation set) 
+* Group them into common traits
+
+It would help you to prioritize the main problems. For example, if your model misclassifies 100 emails and of those only 3 are in the *deliberate misspellings* group, so it's not very good to spend too much effort on this problem. 
+
+The groups examples may overlap, that is, they're not mutually exclusive
+
+Depending on the number of examples, you may not have the time to go through each one of the examples manually. A good amount of examples to look through manually is 100 or few hundreds
+
+To prioritize a group of spam you can: get more data, try new features
+
+One con of error analysis is that is easier to do on applications that humans can do well. Otherwise, it can be very helpful
