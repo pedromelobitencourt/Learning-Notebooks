@@ -296,3 +296,61 @@ Software engineering may be needed for:
 * Audit systems against possible harm prior to development
 
 * Develop mitigation plan
+
+
+# Skewed datasets
+
+## Error metrics
+
+Let's say we are training a binary classifier to detect a rare disease in patients based on some patient data
+
+Find that you've got 1% of error on test set, but the disease affects only 0.5% of your population. So, a program that always says that the person does not have the disease has a lower error than your model. But a program that has 1% error is better than a program that says the same thing always since it does not identify anyone with the disease
+
+So, we use a different error metric rather than just classification error to figure out how well your algorithm is doing
+
+![skewed-databases](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/skewed_databases_1.png)
+
+### Precision and Recall
+
+We usually build a **Confusion Matrix**, a 2x2 matrix
+
+* **True Positive**: the model predicted *true* and it was actually true
+
+* **False Positive**: the model predicted *true*, but it was *false*
+
+* **True Negative**: the model predicted *false* and it was actually false
+
+* **False Negative**: the model predicted *false*, but it was true
+
+* **Precision**: True positives / # of predicted positives
+
+* **Recall**: True positives / # of actual positives
+
+Computing *precision* and *recall*, helps to find if the algorithm is both reasonably accurate
+
+## Trading off precision and recall
+
+* High precision: if the model predicts that a patient has a disease, probably the patient does have it
+
+* High recall: if there is a patient with the disease, probably the algorithm will correctly identify that they do hav the disease
+
+Usually, there is a tradeoff between precision and recall
+
+**Predict y=1 only if very confident**:
+
+**Raising the threshold**, in a logistic regression case, will make a **higher precision** and a **lower recall**, because there will be less predicted positives and we will predict fewer people with the disease
+
+**Avoid missing too many case of rare disease**:
+
+**Decreasing the threshold**, in a logistic regression case, will make the **precision lower** and get a **higher recall**, because there will be more predicted positives and more true positive
+
+![precision-recall](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/precision_recall_1.png)
+
+
+If you want to automatically trade off between precision and recall, there is another metric called **F1 Score**. It helps to find the best trade-off between them. It's a way of combining the precision P and the recall R, but it gives more emphasis to whichever of these values is lower. It's the harmonic mean
+
+If an algorithm has really low precision or really low recall, it's not that much useful
+
+* **F1 Score**: 1 / (1/2 * (1/P + 1/R)) = 2PR/(P+R)
+
+![f1-score](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/f1_score.png)
