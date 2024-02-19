@@ -47,3 +47,41 @@ After that, based on the left branch, we have to define what next feature to put
     * make it small to get less prone to overfitting
     * when improvements in purity score are below a threshold
     * when number of examples in a node is below a threshold
+
+
+# Decision Tree Learning
+
+## Measuring purity
+
+We're going to measure the impurity by a function called **entropy function (H(fraction))**
+
+Entropy is a measure of impurity (*mixed*)
+
+If the fraction p<sub>1</sub> is half, it's very very bad (entropy = 1). Otherwise, if it's 0 or 1, it's very good (entropy = 0)
+
+![entropy](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/entropy_1.png)
+
+![entropy-equation](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/entropy_2.png)
+
+
+## Choosing a split: information gain
+
+When building a decision tree, the way we are going to decide what feature to split on at a node will be based on what choice of feature reduces the entropy
+
+**Information Gain** is the reduction of entropy
+
+There will be the entropy on the left branch and on the right branch
+
+**How to choose between models using those entropies?**
+
+If there's a node with many examples in it with high entropy, that seems worse than a node with few examples in it with high entropy
+
+We'll combine the entropy on the left branch and on the right branch using weighted mean (average weighted entropy). Then, we subtract this value from the root entropy. This is the information gain
+
+So, we'd split based on the highest information gain
+
+If the information gain, that is, the reduction of entropy is low, you may stop splitting based on a threshold
+
+![information-gain](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/information_gain_1.png)
+
+![information-gain](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/information_gain_2.png)
