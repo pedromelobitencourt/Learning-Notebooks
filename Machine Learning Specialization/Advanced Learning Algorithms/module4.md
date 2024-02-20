@@ -85,3 +85,44 @@ If the information gain, that is, the reduction of entropy is low, you may stop 
 ![information-gain](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/information_gain_1.png)
 
 ![information-gain](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/information_gain_2.png)
+
+## Putting it together
+
+**Overall process of building a decision tree**
+
+1. Start with all training examples at the root node
+
+2. Calculate Information Gain for all possible features and pick the one with the highest information gain
+
+3. Split the dataset according to selected feature and create left and right branches of the tree
+
+4. Keep repeating splitting process until stopping criteria is met: (using features not used before)
+    * When a node is 100% one class
+    * When splitting a node will result in the tree exceeding a max depth
+    * When number of examples in a node is below a threshold
+    * Information gain from additional splits is less than threshold
+
+The way of computing decision trees starting at the root is the same as computing the decision tree in the left and right sub-branches
+
+
+## Using one-hot encoding of categorical features
+
+In the examples, we've seen so far, each of the features could take on only one of two values
+
+**But what if we can have features than can take on more than two possible values?**
+
+Now, the *ear shape* can be floppy, oval or pointy (3 possible values)
+
+So, if you use this feature to split on, you will have 3 subsets of the data (3 sub-branches)
+
+For that, we are going to use **One-hot Encoding**
+
+Instead of having a feature that can have 3 possible values, we are going to have 3 features. One feature determines if the animal has pointy ears, another one will define if it has roundy ears and the last one will determine if it has oval ears
+
+![one-hot-encoding](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/one_hot_encoding_1.png)
+
+* **One Hot Encoding**: if a categorical feature can take on *k* values, create *k* binary features (0 or 1 valued)
+
+* **Hot Feature**: the feature that will take the value 1
+
+The idea of using One-hot Encoding still applies to encode categorical features in neural networks
