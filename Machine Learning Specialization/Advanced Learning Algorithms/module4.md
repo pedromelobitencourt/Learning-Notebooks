@@ -257,3 +257,9 @@ model = XGBRegressor()
 model.fit(X_train, Y_train)
 y_pred = model.predict(X_test)
 ```
+
+## Decision Trees vs Neural Network
+
+**When should you pick one or the other?**
+
+![decision-trees-vs-neural-network](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/decision_trees_vs_neural_network.png)
