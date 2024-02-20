@@ -219,3 +219,41 @@ When *n* is **large**, a common choice of *k* is sqrt(n)
 The sampling with replacement procedure causes the algorithm to explore a lot of small changes to the data
 
 ![random-forest](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/random_forest_1.png)
+
+## XGBoost
+
+It's a slightly changed random forest algorithm, that runs very quick
+
+You focused on misclassied examples
+
+We're going to look at the decision trees we've trained so far and look at what we're still not yet doing well
+
+So, we focused on the subset of examples we're not yet doing well on and get a new decision tree
+
+![boosted-trees](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/boosted_trees.png)
+
+Rather than doing sampling with replacement XGBoost assigns different weights to different training examples. So, it doesn't actually need to generate a lot of randomly chosen training sets
+
+![XGBoost](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/XGBoost_1.png)
+
+```
+# Classication
+
+from xgboost import XGBClassifier
+
+model = XGBClassifier()
+
+model.fit(X_train, Y_train)
+y_pred = model.predict(X_test)
+```
+
+```
+# Regression
+
+from xgboost import XGBRegressor
+
+model = XGBRegressor()
+
+model.fit(X_train, Y_train)
+y_pred = model.predict(X_test)
+```
