@@ -140,3 +140,22 @@ We could split the data based on whether or not the data is less than *x* pounds
 Test some *x* values and choose the one that gives the highest information gain
 
 ![continous-valued-features-decision-trees](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/decision_tree_continuous_features.png)
+
+
+## Regression Trees
+
+We are going to generalize decision trees to be regression algorithms, so that we can predict a number
+
+Now, we have three features (*ear shape*, *face shape* and *whiskers*) to predict the *weight* of the animal (target output *y*)
+
+![regression-tree](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/regression_tree_1.png)
+
+In the leaf nodes, we'll have some examples weights, so we get the average of them and it'll be the predicted value
+
+![regression-tree-example](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/regression_tree_2.png)
+
+### Choosing a split
+
+Now, instead of reducing entropy, we want to reduce the variance of the weights of each subset
+
+![regression-tree](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/regression_tree_3.png)
