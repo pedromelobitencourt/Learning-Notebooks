@@ -126,3 +126,17 @@ Instead of having a feature that can have 3 possible values, we are going to hav
 * **Hot Feature**: the feature that will take the value 1
 
 The idea of using One-hot Encoding still applies to encode categorical features in neural networks
+
+## Continuous valued features
+
+Features that can value any number
+
+Let's add the *weight* feature to our cat classifier
+
+**How to split on the weight feature?**
+
+We could split the data based on whether or not the data is less than *x* pounds. It will be job to the learning algorithm to choose
+
+Test some *x* values and choose the one that gives the highest information gain
+
+![continous-valued-features-decision-trees](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/decision_tree_continuous_features.png)
