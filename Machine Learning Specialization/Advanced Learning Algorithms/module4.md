@@ -159,3 +159,63 @@ In the leaf nodes, we'll have some examples weights, so we get the average of th
 Now, instead of reducing entropy, we want to reduce the variance of the weights of each subset
 
 ![regression-tree](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/regression_tree_3.png)
+
+
+# Tree Ensembles
+
+## Using multiple decision trees
+
+One of the weakness of using only one decision tree is that decision tree can be highly sensitive to small changes in the data
+
+So, the solution is to build lots of decision trees (**tree ensemble**)
+
+For instance, changing a cat with roundy face, pointy ears and absence of whiskers to roundy face, floppy ears and presence of whiskers makes the root feature be *whiskers* instead of *ear shape*
+
+So, you can build totally different sub-trees just because of one feature. This makes the algorithm not just **robust**
+
+![decision-tree-is-not-robust](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/decision_tree_not_robust.png)
+
+* **Tree Ensemble**: collection of multiple trees
+
+In tree ensemble, you have *x* decision trees, put them to predict the new data, then they *vote* (majority). It makes less sensitive to small changes
+
+![tree-ensemble](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/tree_ensemble_1.png)
+
+## Sampling with replacement
+
+![sampling-with-replacement](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/sampling_with_replacement_1.png)
+
+We are going to construct multiple random training sets that are all slightly different from our original training set
+
+1. Pick a random training example
+
+2. Note it down
+
+3. Put it back to the *bag*
+
+4. Repeat
+
+It's okay to get repeated training examples. Now, you have a new training set that are similar to the original one, but also different a little bit
+
+## Random Forest Algorithm
+
+**Random Forest** algorithm is one powerfull tree ensemble algorithm
+
+### Generating a tree sample
+
+A common choice of *B* is 64 to 128
+
+You store the built decision trees and make them all predict (*vote*)
+
+![bagged-decision-tree](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/bagged_decision_tree.png)
+
+In a certain point, having too many decision trees, doesn't give additional returns, just slows down the computation
+
+You could end up with the same feature as the root in lots of decision trees, so there is one modification to turn it into **Random Forest** algorithm
+
+
+When *n* is **large**, a common choice of *k* is sqrt(n)
+
+The sampling with replacement procedure causes the algorithm to explore a lot of small changes to the data
+
+![random-forest](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/random_forest_1.png)
