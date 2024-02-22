@@ -82,3 +82,16 @@ Use historical data
 * **Structured data**: data that is stored in a particular format such as rows and columns (spreadsheets, tables)
 
 * **Unstructured data**: data that is not organized in any easily identifiable manner (audio files, video files)
+
+Most of the data being generated right now is unstructured data, such as: audio files, video files, emails, photos, social media. They can be hard to work on, but most of the time we'll be working with structured data since the unstructured data will most likely be structured for analysis
+
+Stuctured data works nicely with a **data model** and makes data visualization easy
+
+* **Data model**: model that is used for organizing data elements and how they relate to one another, providing a map of how data is organized
+
+* **Data elements**: pieces of information, such as people's names
+
+![structured-and-unstructured-data](/Data%20Analytics/Prepare%20Data%20for%20Exploration/assets/module1/structured_unstructured_data_1.png)
+
+The lack of structure makes unstructured data difficult to search, manage, and analyze. But recent advancements in artificial intelligence and machine learning algorithms are beginning to change that. Now, the **new challenge** facing data scientists is making sure these tools are **inclusive** and **unbiased**
+
