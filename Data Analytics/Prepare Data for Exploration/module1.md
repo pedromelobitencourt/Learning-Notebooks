@@ -63,3 +63,22 @@ Dates of traffic records stored in a data format
 **Determine the time frame**
 
 Use historical data
+
+
+# Differentiate Data Formats and Structures
+
+* **Qualitative data**: data that can't be counted, measured or easily expressed using numbers
+    * Nominal data: data that is categorized without a set order (it doesn't have a sequence)
+    * Ordinal data: data with a set order or scale
+
+* **Quantative data**: data that can be measured or counted and expressed using numbers
+    * Discrete data: data that is counted and has a limited number of values, partial measurements (half star) aren't allowed
+    * Continuous data: data that is measured and can have almost any numeric value
+
+* **Internal data**: data that lives within a company's own systems (more reliable and easier to collect)
+
+* **External data**: data that lives and is generated outside of an organization
+
+* **Structured data**: data that is stored in a particular format such as rows and columns (spreadsheets, tables)
+
+* **Unstructured data**: data that is not organized in any easily identifiable manner (audio files, video files)
