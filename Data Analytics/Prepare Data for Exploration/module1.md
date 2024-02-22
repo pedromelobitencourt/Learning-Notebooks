@@ -95,3 +95,27 @@ Stuctured data works nicely with a **data model** and makes data visualization e
 
 The lack of structure makes unstructured data difficult to search, manage, and analyze. But recent advancements in artificial intelligence and machine learning algorithms are beginning to change that. Now, the **new challenge** facing data scientists is making sure these tools are **inclusive** and **unbiased**
 
+## Data Modeling
+
+**Data modeling** is the process of creating diagrams that visually represent how data is organized and structured
+
+The visual representations are called **data models**
+
+Different users might have different data needs, but the data model gives them an understanding of the structured as a whole
+
+### Levels of data modeling
+
+1. Conceptual data modeling: it gives a high-level view of the data structure and it doesn't contain technical details
+
+2. Logical data modeling: it focuses on the technical details of a database such as relationships, attributes and entities
+
+3. Physical data modeling: it depicts how a database operates. It defines all entities and attributes useeds
+
+
+### Data-modeling techniques
+
+Two common methods are:
+
+* **Entity Relationship Diagram (ERD)**
+
+* **Unified Modeling Language (UML)**
