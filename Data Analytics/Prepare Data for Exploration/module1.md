@@ -119,3 +119,16 @@ Two common methods are:
 * **Entity Relationship Diagram (ERD)**
 
 * **Unified Modeling Language (UML)**
+
+
+# Explore Data Types, Fields and Values
+
+* **Data Type**: a specific kind of data attribute that tells what kind of value the data is
+
+Data types in spreadsheets can be one of 3 things:
+
+* Number (you can change the format to currency...)
+
+* Text or string (there can be numbers, but not those used in calculations)
+
+* Boolean
