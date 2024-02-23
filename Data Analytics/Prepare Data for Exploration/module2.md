@@ -67,3 +67,69 @@ This could be data that has sample selection bias, because it doesn't **reflect*
 * Not cited
 
 Bad data can led to serious and lasting impacts, whether it's incorrect conclusion leading to one bad business decision or inaccurate information
+
+# Data Ethics and Privacy
+
+* **Ethics**: well-founded standards of right and wrong that prescribe what humans ought to do, usually in terms of rights, obligations, benefits to society, fairness or specific values
+
+* **Data Ethics**: well-founded standards of right and wrong that dictates how the data is collected, shared and used
+
+Since the ability to collect, share and use data in large quantities is relatively new, the rules that regulare and govern the process are still **evolving**
+
+The importance of data privacy has been recognized by governments worldwide and they started to create data protection legislation
+
+## Aspects of data ethics
+
+* **Ownership**: individuals own the raw data they provide and they have primary control over its usage, how it's processed and how it's shared
+
+* **Transaction transparency**: all data-processing activities and algorithms should be completely explainable and understood by the individual who provides the data
+
+* **Consent**: an individual's right to know explicit details about how and why their data will be used before agreeing to provide it
+
+* **Currency**: individuals should be aware of financial transactions resulting from the use of their personal data and the scale of these transactions. You have the option to opt out your data
+
+**Keep in mind that all data come from people, so, at the end of the day, data are people**
+
+You should have responsibility to those people represented in the data. So, we should keep their data private
+
+We need to empower people to control their own data
+
+## Prioritize data privacy
+
+* **Privacy**: preserving a data subject's information and activity any time a data transaction occurs
+
+So, the users should have protection from unauthorized access to their private data, freedom from inappropriate use of their data, the right to inspect, update or correct their data, ability to give consent to use their data and legal right to use their data
+
+* **Openness**: free access, usage and sharing of data
+
+## Data anonymization
+
+**Personally identifiable information** (PII) is information that can be used by itself or with other data to track down a person's identity
+
+**Data anonymization** is the process of protecting people's private or sensitive data by eliminating that kind of information
+
+Typically, it involves *blanking*, *hashing* or *masking* personal information
+
+As a data analyst, you might be expected to understand what data needs to be anonymized, but you generally wouldn't be responsible for the data anonymization itself
+
+### Types of data that should be anonymized
+
+**De-identification** is a process used to wipe data clean of all personally identifying information
+
+* Telephone numbers
+
+* Names
+
+* License plates and license numbers
+
+* Social security numbers
+
+* IP addresses
+
+* Medical records
+
+* Email addresses
+
+* Photographs
+
+* Account numbers
