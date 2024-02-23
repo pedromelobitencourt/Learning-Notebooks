@@ -34,3 +34,36 @@ You can avoid sampling bias by making sure the sample is chosen at random, so th
 * **Confirmation bias**: the tendency to search for or interpret information in a way that confirms pre-existing beliefs
 
 Those types of bias impact the way we collect and interpret the data
+
+## Achieve data credibility
+
+There are good practices to follow that will help us measure the reliability of datasets
+
+The more good quality data we have, the more confidence we can have in our decisions
+
+**How to identify good data sources?**
+
+* R: reliable
+* O: original (validate the data from second or third party with the original source)
+* C: comprehensive (all critical information needed to answer the question)
+* C: current
+* C: cited (makes the information more reliable)
+
+The best bet is to go with the vetted pulblic data sets, academic papers, financial data and governmental agency data
+
+
+## Bad data
+
+* Not reliable: Bad data can't be trusted because it's inaccurate, incomplete or biased
+
+This could be data that has sample selection bias, because it doesn't **reflect** the overall population or it could be data visualizations or graphs that are just **misleading**
+
+* Not original: you can't locate the original data source
+
+* Not comprehensive: data that are missing important information needed to answer the question or they can have human error
+
+* Not current: outdate and irrelevant
+
+* Not cited
+
+Bad data can led to serious and lasting impacts, whether it's incorrect conclusion leading to one bad business decision or inaccurate information
