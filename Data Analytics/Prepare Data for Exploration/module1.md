@@ -132,3 +132,47 @@ Data types in spreadsheets can be one of 3 things:
 * Text or string (there can be numbers, but not those used in calculations)
 
 * Boolean
+
+Rows can also be called **records** and columns can be called **fields**
+
+But, in some contexts, **field** can mean a specific value
+
+* **Wide data**: data in which every data subject has a single row with multiple columns to hold the values of various attributes of the subject
+    * It lets us quickly identify and compare columns
+
+* **Long data**: data in which each row is one time point per subject, so each subject will have data in multiple rows
+    * Great format for storing and organizing data when there's multiple variables for each subject at each time point that we want to observe
+    * We can analyze all of this data using fewer coluns
+    * If we added a new variable, we'd need only one more columns
+
+## Data Transformation
+
+**Data transformation** is the process of changing the data's format, structure or values
+
+Data transformation usually involves:
+
+* Adding, copying or replicating data
+
+* Deleting fields or records
+
+* Standardizing the names of variables
+
+* Renaming, moving or combining columns in a database
+
+* Joining one set of data with another
+
+* Saving a file a different format
+
+**Why to transform data?**
+
+* Data Organization: better organized data is easier to use
+
+* Data Compatibility: different applications or systems can then use the same data
+
+* Data Migration: data with matching formats can be moved from one system to another
+
+* Data Merging: data with the same organization can be merged together
+
+* Data Enhancement: data can be displayed with more detailed fields
+
+* Data Comparison: apples-to-apples comparisons of the data can then be made
