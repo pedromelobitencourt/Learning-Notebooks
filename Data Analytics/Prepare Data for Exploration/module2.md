@@ -133,3 +133,30 @@ As a data analyst, you might be expected to understand what data needs to be ano
 * Photographs
 
 * Account numbers
+
+
+# Understand open data
+
+We can't ignore other aspects of data ethics (ownership, consent, transaction transparency, privacy, currency)
+
+We can access, use and share the data if it meets these high standards
+
+Open data must be **available** as a whole, preferably by downloading over the Internet in a convenient and modifiable form
+
+Open data must be provided under terms that allow **reuse and redistribution**
+
+Everyone must be able to use, reuse and redistribute data
+
+* **Data interoperability**: the ability of data systems and services to openly connect and share data
+
+### Pros
+
+* Credible databases can be used more widely
+
+* All data can be leveraged, shared and combined with other data (it would promote huge impacts)
+
+### Cons
+
+* Lots of resources to make it feasible
+
+* Lots of colaboration
