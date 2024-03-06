@@ -147,3 +147,25 @@ The mean value μ affects the **center of the distribution**
 The variance value σ affects the **width and the height** of the Gaussian Distribution
 
 ![gaussian-distribution-example](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/gaussian_distribution_example1.png) 
+
+We are going to build a model or estimate the probability for p(x), given:
+
+* the training set: { x<sup>1</sup>, x<sup>2</sup>, ..., x<sup>m</sup> }
+
+* each example x<sup>i</sup> has n features
+
+Then, our model will be:
+
+p(x) = p(x<sub>1</sub>; μ<sub>1</sub>, σ<sub>1</sub><sup>2</sup>) * p(x<sub>2</sub>; μ<sub>2</sub>, σ<sub>2</sub><sup>2</sup>) * ... * p(x<sub>n</sub>; μ<sub>n</sub>, σ<sub>n</sub><sup>2</sup>)
+
+We are assuming that the features x<sub>1</sub>, x<sub>2</sub> and so on up to x<sub>m</sub> are **statistically independent**, but it works fine even when the features are not statistically independent
+
+## Anomaly Detection Algorithm
+
+The algorithm will tend to flag an example as anomalous if 1 or more features are very small or very large relative to what it has seen in the training set
+
+For each of the features x<sub>j</sub>, we're fitting a Gaussian Distribution
+
+![anomaly-detection-algorithm](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_algorithm.png)
+
+![anomaly-detection-example](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_example.png)
