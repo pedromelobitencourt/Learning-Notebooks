@@ -107,6 +107,7 @@ It calculates these computations one step at a time
 * With vectorization
 
 In a **single** step, it multiples each pair of *w* and *x*
+
 Then, after that, the computer takes those numbers and uses specialized hardware to add them all very efficiently
 
 It will run efficiently and **scale** well to large datasets or to train large models
@@ -215,7 +216,7 @@ or
 
 * Aim for about -3 <= x <= 3
 
-Rescale when the feature ranges a lot, for instance from -100 to 100 in comparison with other features that ranges much less
+Rescale when the feature ranges a lot, for instance from -100 to 100 in comparison with other features that range much less
 
     0 <= x1 <= 3: okay, no rescaling
 

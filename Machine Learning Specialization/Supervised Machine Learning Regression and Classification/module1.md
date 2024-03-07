@@ -158,7 +158,7 @@ We'll have some function *J(w, b)* and we want to minimize it. The cost function
 
 With a squared error cost function we always end up with a bow shape plot 
 
-If we're in a top of a hill (starting point), we should ask: where should a do a baby step in order to get to a valley as efficient as possible? - This baby step is called **the direction of steepest descent**. We end up in a **local minima**, not necessarilly the **global minima**
+If we're in a top of a hill (starting point), we should ask: where should a do a baby step in order to get to a valley as efficient as possible? - This baby step is called **the direction of steepest descent**. We ended up in a **local minima**, not necessarilly the **global minima**
 
 ![gradient-descent-steps](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_steps.png)
 
