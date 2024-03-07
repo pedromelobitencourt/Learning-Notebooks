@@ -202,6 +202,21 @@ For example, *w* and *b* may bounce back and forth between positive and negative
 
 ![large-learning-rate](/Machine%20Learning%20Specialization/Supervised%20Machine%20Learning%20Regression%20and%20Classification/assets/module1/gradient_descent_large_learning_rate.png)
 
+Let's have an analogy:
+Imagine that a kid sees 10 dogs and all of them are black in color, he might believe that all dogs are black and would consider it to be a feature to identify a dog
+
+Now, he's shown a white dog and his parents tells him that it's a dog. With a desirable learning rate, he'd understand that color isn't an important feature to identify a dog
+
+But with a low learning rate, he may believe that the white dog is an outlier
+
+With a too high learning rate, he may believe now that all dogs are white
+
+* Both high and low learning rates results in wasted time and resources
+
+* A lower learning rate results in more training time and more time may result in more GPU cost
+
+* A higher learning rate may result in not being able to predict anything correctly
+
 
 What if your *w* is already at a local minimum, but there is a better local minimum or even a global minimum?
 
