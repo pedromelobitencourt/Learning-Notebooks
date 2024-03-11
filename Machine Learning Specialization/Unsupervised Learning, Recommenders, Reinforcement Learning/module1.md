@@ -203,3 +203,46 @@ There are some possible evaluation matrics:
 ![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning1.png)
 
 ![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning2.png)
+
+### Choosing what features to use
+
+In contrast to supervised learning that the algorithm can determine what features to ignore, to prioritize or how to scale a feature and to take the best advantage of the features we give to it, anomaly detection which learns from unlabeled data is harder for the algorithm to figure out what features to ignore
+
+So, carefully choosing the features is more important for anomaly detection than supervised learning approaches
+
+Try to make sure that the features you give to the learning algorithm are more or less Gaussian
+
+If any feature is not Gaussian, you can change it to make it a little bit more Gaussian
+
+To see the distribution of a feature, you can use the command:
+
+```
+plt.hist(x)
+```
+
+In some cases, it will result in a Gaussian Distribution but in other cases it won't. So, you can transform your feature to make it more gaussian
+
+Some ways of doing it is:
+
+```
+x1 -> log(x1)
+x2 -> log(x2 + c), where c is a constant
+x3 -> sqrt(x3)
+x4 -> x4^(1/3)
+```
+
+So, you can try some ways and change the constant or other numbers and see which one gives the *more gaussian*
+
+### Error analysis for anomaly detection
+
+One of the most common problem is: p(x) is comparable for normal and anomalous examples, that is, p(x) is large for both
+
+If you use, for instance, only one feature, some anomaly may seem fine. So, what you could do is adding one more feature to the data set
+
+The development process will often go through is: to train the model and then to see what anomallies in the cross validation set the algorithm is failing to detect. Then, look at those examples to see if that can inspire the creation of new features that would allow the algorithm to spot that examples takes on unusually large or unusually small values on the new features, so it can successfully flag those examples as anomalies
+
+![error-analysis-anomaly-detection](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection-error-analysis.png)
+
+![anomaly-detection-error-analysis](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection-error-example.png)
+
+In the above example, it's unusually that the CPU is high but the network traffic is low, so we created a feature for this case
