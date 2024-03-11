@@ -169,3 +169,37 @@ For each of the features x<sub>j</sub>, we're fitting a Gaussian Distribution
 ![anomaly-detection-algorithm](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_algorithm.png)
 
 ![anomaly-detection-example](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_example.png)
+
+## The Importance of Real-number Evaluation
+
+When developing machine learning algorithms (choosing features, parameters...), making decisions is much easier if you have a way of evaluating your learning algorithm
+
+For instance, if you can change some values rapidly and then compute some value for each change, you could evaluate easily what is the best feature/parameter change
+
+Let's imagine that we have some labeled data that represent some features of aircraft engines and the output of each engine is whether the engine is flawed or not
+
+If we had 10000 examples of good engines and 20 examples of flawed engines, we could put 6000 good examples in the training set, 2000 good examples and 10 flawed ones in the cross validation set and 2000 good examples and 10 flawed ones in the test set
+
+Then, you could use the cross validation set to tune the threshold ε and the features x<sub>j</sub>
+
+Futhermore, you could use the test set to evaluate your tuning for example
+
+So, the training set should have only non-anomalous data, whereas cross validation and the test set should have mostly non-anomalous data and few anomalous data. Regarding it, your algorithm would be primarilly an unsupervised learning algorithm, because the training set doesn't really have labeled data since the training set only has non-anomalous examples
+
+**But don't worry if there are some few anomalous examples in the training set**
+
+Some people also separate the data set into only 2 sets, a training set and a cross validation set. All training data set is composed by only non-anomalous data just as the other alternative
+
+But use this method only if you have really few anomalous examples, because there is a high risk of overfitting
+
+There are some possible evaluation matrics:
+
+* True positive, false positive, true negative, false negative
+* Precision/Recall
+* F<sub>1</sub> score
+
+### Anomaly Detection vs Supervised Learning
+
+![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning1.png)
+
+![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning2.png)
