@@ -225,3 +225,52 @@ It doesn't give us a natural way to use side information or additional informati
 * **Items**: Genre, movie stars, studio, ...
 
 * **User**: Demographics (age, gender, location), expressed preferences, ...
+
+
+# Content-based Filtering Algorithm
+
+* **Collaborative Filtering**: recommend items to you based on ratings of users who gave similar ratings as you
+
+* **Content-based Filtering**: recommend items to you based on features of user and item to find good match. It requires having some features of each user as well as some features of each items and it uses those features to try to try to decide which items and users might be a good match for each other
+
+### Examples of user and item features
+
+* **X<sub>u</sub><sup>(j)</sup>**: user features such as: age, gender, country, movies watched, average rating per genre
+
+* **X<sub>m</sub><sup>(i)</sup>**: movie features such as: year, genre/genres, reviews, average ratings
+
+Now, we're going to predict the rating of user j on movie i as:
+
+**V<sub>u</sub><sup>(j)</sup> V<sub>m</sub><sup>(i)</sup>**
+
+* **V<sub>u</sub><sup>(j)</sup>**: list of numbers computed from the features of user j
+
+* **V<sub>m</sup><sup>(i)</sup>**: list of numbers computed from the features of movie i
+
+If we're able to come up with good choice of those vectors, then hopefully the dot product of them will be a good prediction of the rating that a user j gives to a movie i
+
+For example, the values of V<sub>u</sub><sup>(j)</sup> could represent the users preferences, how much user j likes romance movies, how much user j likes action movies...
+
+The same could be said for V<sub>m</sup><sup>(i)</sup>. Its values could represent the movies features, such as: how much movie i is a romance movie...
+
+X<sub>u</sub><sup>(j)</sup> can have different size than X<sub>m</sub><sup>(i)</sup>
+
+V<sub>u</sub><sup>(j)</sup> must have the same size as V<sub>m</sub><sup>(i)</sup>, since we're going to do a dot product of them
+
+## Deep Learning for Content-based Filtering
+
+A good way to implement Content-based Filtering is to use **Deep Learning**
+
+To compute the V<sub>u</sub> and V<sub>m</sub> vectors, we are going to use neural network
+
+The first neural network will be called **user network**
+
+In this neural network, the input will be the vector X<sub>u</sub>. Then, there are some few Dense layers (128 units, 64 units, 32 units). In this example, the output layer V<sub>u</sub> will have 32 units
+
+The second neural network will be called **movie network**
+
+In this neural network, the input will be the vector X<sub>m</sub>. Then, there are some few Dense layers (256 units, 128 units, 32 units). In this example, the output layer V<sub>m</sub> will have 32 units 
+
+As mentioned, the output layer of both, user and movie network, must have the same size
+
+Finally, we are going to predict the rating of user j in movie i as: **V<sub>u</sub><sup>(j)</sup> V<sub>m</sub><sup>(i)</sup>**
