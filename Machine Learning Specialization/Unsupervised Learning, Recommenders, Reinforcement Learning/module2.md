@@ -105,3 +105,123 @@ For Binary Labels, we are going to predict that the probability of **y<sup>(i, j
 The cost function for Binary Application is:
 
 ![binary-application-for-cost-function](/assets/module2/binary-application-cost-function.png)
+
+
+# Recommender Systems Implementation Detail
+
+## Mean Normalization
+
+Normalization can help the algorithm to run faster
+
+In the next example, a new user was added. It has not rated any movie yet. If you were to train a collaborative filtering algorithm on the data, since we are trying to make the parameter *w* small (because of the regularization term), and run the algorithm, the parameters *w* and *b* for the new user (Eve) will be 0
+
+Moreover, as long as the new user hasn't rated any movie yet and the regularization term tries to minimize *w*, *w* will be 0 for the new user. This will mean that the new user has rated every movie as 0 and it will not be very helpful
+
+![new-user-example](./assets/module2/new-user-example.png)
+
+Mean Normalization will help the algorithm comes up with better prediction of the movie ratings for a new user that hasn't rated any movies
+
+Firstly, well turn the dataset into a 2d-matrix. For each row (movie), we'll compute the average rating that was given to it
+
+We'll store the average ratings into a μ vector. Then, for each movie, we're going to subtract each rating that was given to it by its average rating and this will be our new **y** matrix
+
+Doing so, we predict: **w<sup>j</sup>x<sup>i</sup> + b<sup>b</sup> + u<sub>i</sub>**
+
+Now, the *w* and *b* parameters for the new user won't be 0, but the average rating of each movie and this will be more reasonable than giving 0
+
+It turns out that by normalizing the mean of the different movie ratings to be zero, the optimization algorithm for the recommender system will also run just a little bit faster but it does make the algorithm behave much better for users who have rated no movies or just a small numbers of it
+
+You could also normalize by the columns. It depends on the application which one is more reasonable. In this example, it would mean predicting the rating of a movie that hasn't been rated by any user
+
+![mean-normalization](/assets/module2/mean-normalization1.png)
+
+## TensorFlow Implementation
+
+TensorFlow is not only a tool for neural network, but for other learning algorithms as well
+
+One of many great things TensorFlow does is calculate optimally the derivatives needed for gradient descent
+
+**Auto Diff**
+
+```
+w = tf.Variable(3.0) # initializing the parameter w
+x = 1.0
+y = 1.0 # target value
+alpha = 0.01 # learning rate
+
+iterations = 30
+
+# Automatically computes the derivatives
+for iter in range(iterations):
+    # Use TensorFlow's Gradient tape to record the steps
+    # used to compute the cost J, to enable auto differentiation
+    with tf.GradientTape() as tape:
+        fwb = w*x # f(x)
+        costJ = (fwb - y)**2
+
+    # Use the gradient tape to calculate the gradients
+    # of the cost with respect to the parameter w
+    [dJdw] = tape.gradient( costJ, [w] )
+
+    # Run one step of gradient descent by updating
+    # the value of w to reduce the cost
+    w.assign_add(-alpha * dJdw)
+```
+
+The implementations of our recommender system example will be the following:
+
+```
+# Instantiate an optimizer
+optimizer = keras.optimizers.Adam(learning_rate=1e-1)
+
+iterations = 200
+for iter in range(iterations):
+    with tf.GradientTape() as tape:
+        # Compute the cost (forward pass is included in cost)
+        # Figure out automatically the derivatives
+        # Record the sequence of operations used to compute the cost
+        cost_value = cofiCostFuncV(X, W, b, Ynorm, R,
+            num_users, num_movies, lambda)
+
+    # Use the gradient tape to automatically retrieve
+    # the gradients of the trainable variable with respect to
+    # the loss
+    # Compute the derivative
+    grads = tape.gradient( cost_value, [X, W, b] )
+
+    # Run one step of gradient descent by updating
+    # the value of the variables to minimize the loss
+    optimizer.apply_gradients( zip(grads, [X, W, b]) )
+```
+
+![tensor-flow-implementation](./assets/module2/tensorflow-implementation1.png)
+
+# Finding Related Items
+
+In practice, the features x<sup>i</sup> of item i are quite hard to interpret
+
+Collectively, the features x<sup>1</sup>, x<sup>2</sup>, x<sup>3</sup>, ..., x<sup>n</sup> do convey something about what that movie is like
+
+If you want to find other items related to item i, you have to find **item k** with x<sup>**(k)**</sup> (a vector) similar to x<sup>(i)</sup>
+
+**How can we determine if x<sup>(k)</sup> is similar to x<sup>(i)</sup>?**
+
+![related-items-equation](./assets/module2/related-items-equation1.png)
+
+Then, you could return the 'z' most related items to the user 
+
+## Limitations of Collaborative Filtering
+
+### Cold Start Problem
+
+* How to rank new items that few users have rated?
+
+* How to show something reasonable to new users who have rated few items?
+
+### Use Side Information about Items or Users
+
+It doesn't give us a natural way to use side information or additional information about items or users
+
+* **Items**: Genre, movie stars, studio, ...
+
+* **User**: Demographics (age, gender, location), expressed preferences, ...
