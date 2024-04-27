@@ -269,8 +269,117 @@ In this neural network, the input will be the vector X<sub>u</sub>. Then, there 
 
 The second neural network will be called **movie network**
 
-In this neural network, the input will be the vector X<sub>m</sub>. Then, there are some few Dense layers (256 units, 128 units, 32 units). In this example, the output layer V<sub>m</sub> will have 32 units 
+In this neural network, the input will be the vector X<sub>m</sub>. Then, ther e are some few Dense layers (256 units, 128 units, 32 units). In this example, the output layer V<sub>m</sub> will have 32 units 
 
 As mentioned, the output layer of both, user and movie network, must have the same size
 
-Finally, we are going to predict the rating of user j in movie i as: **V<sub>u</sub><sup>(j)</sup> V<sub>m</sub><sup>(i)</sup>**
+Finally, we are going to predict the rating of user j in movie i as: prediction = **V<sub>u</sub><sup>(j)</sup> V<sub>m</sub><sup>(i)</sup>**
+
+V<sub>u</sub><sup>(j)</sup> and V<sub>m</sub><sup>(i)</sup> can have different number of layers and different number of units per hidden layers
+
+If you want to know if the user j would like the movie i, you could use the sigmoid function to predict the probability that Y<sup>(i, j)</sup> is 1: g(v<sub>u</sub><sup>(j)</sup> . v<sub>m</sub><sup>(i)</sup>)
+
+This model has a lot of parameters. Each layer of the neural network has a set of parameters of the neural network. So, **how do you train all the parameters of both the user network and the movie network?**
+
+We use a cost function J shown below:
+
+![cost-function-deep-learning](./assets/module2/cost-function-deep-learning1.png)
+
+Depending on the parameters of the neural network, you may end up with different vectors for the users and for the movies. So, we train the modal so that we end up with vectors that result in small squared error
+
+After you've trained this model, you can use it to find similar items
+
+In our example:
+
+* v<sub>u</sub><sup>(j)</sup> is a vector of length 32 that describes user j with features x<sub>u</sub><sup>(j)</sup>
+
+* v<sub>m</sub><sup>(i)</sup> is a vector of length 32 that describes movie i with features x<sub>m</sub><sup>(i)</sup>
+
+**To find movies similar to movie i:**
+
+You can look for movies k that the distance between their vectors v<sub>m</sub><sup>(k)</sup> and the movie i is small
+
+||v<sub>m</sub><sup>(k)</sup> - v<sub>m</sub><sup>(i)</sup>||² small
+
+This can be pre-computed, that is, for example, you can run a compute server overnight to go through the list of movies and, for every movie, find similar movies to it, so that, in the morning, your user will see the most similar movies to the movie that user's watching
+
+**It can be computationally very exzpensive to run if you have a large catalogue...**
+
+## Recommending from a large catalogue
+
+Some applications may have thousands, millions of items. How can we make our recommendation system more efficient?
+
+Having to run neural network inference thousands of millions of times every time a user shows up on your website becomes infeasible
+
+Many large scale recommender systems are implemented in two steps:
+
+* **Retrival**: during the retrieval step, we will generate a large list of plausible items candidates. This tries to cover a lot of possible things you might recommend to the user. You may add some items that the user is not likely to like
+    
+    * For each of the last 10 movies watched by the user, we may get the 10 most similar movies
+
+    * For most viewed 3 genres, find the top 10 movies
+
+    * Top 20 movies in the country
+
+    * Then, we combine the retrieved items into a list, removing duplicates and items already watched/purchased
+
+* **Ranking**: during the ranking step, we will fine and tune to pick the best items to recommend to the user. In other words, we take the retrieved list and rank using the learned model
+
+One question you may ask is: how many items do I retrieve in the retrieval step?
+
+Retrieving more items results in better performance, but slower recommendations
+
+To analyze/optimize the trade-off, cary out offline experiments to see if retrieving additional items results in more relevant recommendations
+
+## Ethical Use of Recommender Systems
+
+What could be the goal of the recommender system?
+
+* Movies most likely to be rated 5 stars by user
+
+* Products most likely to be purchased
+
+* Ads most likely to be clicked on (+ high bid ads)
+
+* Products generating the largest profit
+
+* Video leading to maximum watch time
+
+Sometimes, it could be nice if the website was transparent with you about the criteria by which it is deciding what to show you. Is it trying to be more profitable or is it trying to show you things that are most useful to you?
+
+The three last items may be problematic goals
+
+## TensorFlow Implementation
+
+```
+user_NN = tf.keras.models.Sequential([
+    tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(32)
+])
+
+item_NN = tf.keras.models.Sequential([
+    tf.keras.layers.Dense(256, activation='relu'),
+    tf.keras.layers.Dense(128, activation='relu'),
+    tf.keras.layers.Dense(32)
+])
+
+# create the user input and point to the base network
+input_user = tf.keras.layers.Input(shape=(num_user_features))
+vu = user_NN(input_user)
+vu = tf.linalg.l2_normalize(vu, axis=1)
+
+# create the item input and point to the base network
+input_item = tf.keras.layers.Input(shape=(num_items_features))
+vm = item_NN(input_item)
+vm = tf.linalg.l2_normalize(vm, axis=1)
+
+# measure the similarity of the two vector outputs
+output = tf.keras.layers.Dot(axes=1)([vu, vm])
+
+# specify the inputs and output of the model
+model = Model([input_user, input_])
+
+# specify the cost function
+cost_fn = tf.keras.losses.MeanSquaredError()
+```
