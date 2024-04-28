@@ -445,3 +445,47 @@ This step is called **Reconstruction**
 We don't have much information to get back to the original values (axis) exactly, but we can approximate
 
 ![pca-reconstruction](./assets/module2/pca-reconstruction.png)
+
+
+### PCA in Code
+
+1. Optional pre-processing: perform feature scaling
+
+2. Fit the data to obtain 2 or 3 (for visualization) new aes (principal components)
+
+```
+# use the fit function, it includes mean normalization
+fit
+```
+
+2. Optionally examine how much variance is explained by each principal component
+
+```
+explained_variance_ratio_
+```
+
+3. Transform (project) the data onto new axes
+
+```
+transform
+```
+
+Example:
+
+```
+pca_1 = PCA(n_components=1)
+pca_1.fit(X)
+pca_1.explained_variance_ratio_ # how much it explains the data
+X_trans_1 = pca_1.transform(X)
+X_reduced_1 = pca.inverse_transform(X_trans_1)
+```
+
+### Applications of PCA
+
+* **Visualization**
+
+Less frequently used for:
+
+* **Data Compression**: to reduce storage or transmission costs
+
+* **Speeding up training of a supervised learning model**
