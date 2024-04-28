@@ -383,3 +383,65 @@ model = Model([input_user, input_])
 # specify the cost function
 cost_fn = tf.keras.losses.MeanSquaredError()
 ```
+
+# Principal Component Analysis
+
+Principal Component Analysis (PCA) is an algorithm that is commonly used for **visualization**, specifically for a dataset that you have a lot of features. You can't plot a 1000 dimensional data for instance
+
+It's an algorithm that allows you to take data with a lot of features and reduce the number of features to 2 features or maybe 3 features, so that you can plot it and visualize it
+
+It's a technique commonly used by data scientists
+
+Let's have as an example data from a collection of passenger cars. Passengers cars may have a lot of features
+
+Let's say we are given two features of each car: the length and the width
+
+Generally, the width of the cars doesn't change much. For example, in the U.S, the common car width is 6 feet and it doesn't vary that much. So, we can only take the length feature to reduce the number of features. Only one feature has a meaningful degree of variation
+
+Now, let's say that we have two features: the length and the height of the car. Both vary a lot, so we can't take only one of them. Instead of being limited to taking either the length (x1 axis) or the height (x2 axis), let's have a third one (z axis for example), that is a combination of x1 and x2. The z axis could represent something like "the size" of the car as long as it is a combination of length and the height of the car
+
+So, **PCA** finds one or more new axes, so that when you measure your data's coordinates on the new axis, you end up still with really useful information, but maybe, instead of two numbers corresponding to the coordinates on x1 and x2, you now need a few numbers to capture roughly the size of the car
+
+When it reduces the number of features, the trick thing is that you have now to figure out a way to interpret those features, since it can reduce thousands of features to 1, 2 or 3
+
+How can we replace, for instance, 2 features with just one? How can we choose a new axis, that is, somehow, a good feature for capturing or representing the data?
+
+Before anything else, you must preprocess the features, that is, **normalize** them so that they have zero mean and do a **feature scaling** as well
+
+Then, we could "create" an axis and project the example onto the axis
+
+![running-pca](./assets/module2/pca1.png)
+
+The points are quite spread apart and so the variation among those five points on z-axis is decently large, so we are capturing info of the original data
+
+Choosing another z-axis, the projection of the points may be squished together, that is, their variance is much less than the original one, so you're capturing much less of the information of the original data
+
+![running-pca](./assets/module2/pca2.png)
+
+So, we want to get an axis so that we have the maximum possible variance so we capture more info. This axis is called **principal component**
+
+What is going to be the coordinate on the new axis?
+
+![pca-new-coordinates](./assets/module2/pca-new-coordinates.png)
+
+If you were to pick a second principal component, it's 90° to the first axis
+
+If you were to pick a third principal component, it'd be at 90° to the first and to the second axis
+
+**PCA is not linear regression**
+
+You are not trying to fit a line to use x1 to predict x2. PCA finds axis to retain variance (info)
+
+PCA is trying to take a lot of features and treat them equally and reduce the number of axis needed to represent the data well
+
+It turns out that maximizing the spread of these projections will correspond to minimizing the distances of the line segments (the distance that the points have to move in order to be on the new axis)
+
+### PCA Reconstruction
+
+**Can we do the opposite? Given the value on the new axis, can we get an approximation to the original data?**
+
+This step is called **Reconstruction**
+
+We don't have much information to get back to the original values (axis) exactly, but we can approximate
+
+![pca-reconstruction](./assets/module2/pca-reconstruction.png)
