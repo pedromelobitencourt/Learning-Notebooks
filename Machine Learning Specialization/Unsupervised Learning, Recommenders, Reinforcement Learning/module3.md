@@ -127,3 +127,5 @@ So, we want to choose a policy π(s) = a that will tell us what action a to take
 It changes the Bellman Equation since, if you are at state 3, the next state s' you will be at if you take action a will be random
 
 ![bellman-equation-expected-return-value](./assets/module3/bellman-equation-expected-return1.png)
+
+The probability of the robot not going in the *right* direction could represent the *lack of the robot's control* in percentage
