@@ -81,3 +81,49 @@ In Markov Decision Process, the future depends only where you are now not on how
 The robot is our example could be called **agent**. If it takes an action a, something will happen in the **environment**
 
 ![markov-decision-process-diagram](./assets/module3/markov-decision-process.png)
+
+### State Action Value Function
+
+The **State Action Value Function** or **Q function** (Q* or Optimal Q function) is typically denoted by the letter Q. It's a function of a state *s* you might be in as well as the action *a* you might take. The function *Q(s, a)* will give a return value if you start at state *s*, take the action *a* once, then behave optimally after that
+
+![state-cost-value-function](./assets/module3/state-action-value-function1.png)
+
+Computing Q(s, a) for every state s and action a will make evident which action *a* is the best to take at state *s*, that is, the best return value from state *s* is the largest Q(s, a) and the best possible action to take at state s is the one that gives you the maximum Q(s, a). So, if can compute the Q(s, a) for every state and every action, you can compute the optimal policy π(s)
+
+## Bellman Equation
+
+The Bellman Equations helps you to compute the state cost value function
+
+![bellman-equation-non-terminal-states](./assets/module3/bellman-equation1.png)
+
+* γ is the discount factor
+
+* R(s) is the reward function
+
+If you are at a terminal state, the equation is:
+
+![bellman-equation-for-terminal-states](./assets/module3/bellman-equation2.png)
+
+![bellman-equation-example](./assets/module3/bellman-equation-example1.png)
+
+![bellman-equation](./assets/module3/bellman-equation3.png)
+
+## Random (stochastic) Environment
+
+In some cases, the outcome is not completely reliable. For example, if you command your mars rover to go left, maybe there's a little bit of rock slide, so it goes to the wrong direction
+
+Then, there is a generalization of reinforcement learning framework, which models random or stochastic environments
+
+Using the above example (rock slide), let's say that if the robot is at state 4 and we want it to go to the left. It has 90% chance of going in the right way and 10% of going to the right. If we want it to go to the right side, it has the opposite probability
+
+So, maybe the actual sequence of states the robot visit may be random. If the Reinforcement Learning Problem is stochastic, there is NOT only one possible sequence of states
+
+Futhermore, in stochastic environment, we are not interested in is not maximizing the return, since it is a random number, but we are interested in is maximizing the average value of the sum of the discounted rewards, that is, take the average of all the *thousands* different possible sequences (**expected return**)  
+
+![expected-return-value](./assets/module3/expected-return-value1.png)
+
+So, we want to choose a policy π(s) = a that will tell us what action a to take in state s so as to maximize the expected return
+
+It changes the Bellman Equation since, if you are at state 3, the next state s' you will be at if you take action a will be random
+
+![bellman-equation-expected-return-value](./assets/module3/bellman-equation-expected-return1.png)
