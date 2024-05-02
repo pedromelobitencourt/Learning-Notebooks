@@ -129,3 +129,161 @@ It changes the Bellman Equation since, if you are at state 3, the next state s' 
 ![bellman-equation-expected-return-value](./assets/module3/bellman-equation-expected-return1.png)
 
 The probability of the robot not going in the *right* direction could represent the *lack of the robot's control* in percentage
+
+# Continuous State Spaces
+
+Most of the applications have continuous state spaces, in opposite to the Mars rover robot example
+
+Most of the robots can be in more than any discrete number of states
+
+For instance, to build a self drive car, each state may have its *x* position, its *y* position, its orientation *θ*, its speed on *x*-direction (x'), its speed on *y*-direction (y') and how fast it is turning (θ'). Any of those variables can take any value within its valid range
+
+## Lunar Lander Example
+
+The Lunar Lander lets you land a simulated vehicle on the moon. It is rapidly approahing the surface of the moon and the learning algorithm's job is the fire thrusters at the appropriate times to land it safely on the landing pad
+
+### Actions
+
+In this examples, there are 4 possible actions:
+
+* do nothing
+* main thruster
+* right thruster (push the lander to the left)
+* left thruster (push the lander to the right)
+
+### States
+
+The states are going to be:
+
+* **x**: x position
+* **y**: y position
+* **x'**: x-direction velocity
+* **y'**: y-direction velocity
+* **θ**: its orientation
+* **θ'**: orientation velocity
+* **l**: has it landed the left leg?
+* **r**: has it landed the right leg?
+
+### Reward Function
+
+* Getting to landing pad: 100 - 140, depending on how well it lands on the center of the pad
+
+* Additional reward for moving toward/away from pad
+
+* Crash: -100
+
+* Soft landing: +100
+
+* Leg grounded: +10
+
+To not waste too much fuel
+
+* Fire main engine: -0.3
+
+* Fire side thruster: -0.03
+
+Since we are not so *impacient* of landing the lander, the discount factor will be γ = 0.985
+
+### Deep Reinforcement Learning
+
+We are going to train a neural network to compute or approximate the state action value function Q(s, a) and that, in turn, will let us pick good actions
+
+The inputs of the neural network will be the column matrix [s a]. The actions can be transformed in a one-hot feature process
+
+The output will be Q(s, a) = y (target value)
+
+So, in a state *s*, we're going to compute Q(s, nothing); Q(s, left); Q(s, main); Q(s, right) and, then pick the action a that maximizes Q(s, a)
+
+**How can we use a neural network to output Q(s, a)?**
+
+We're going to use Bellman's equation to create a trainig set with lots of examples *x* and *y* and then, we'll use supervised learning
+
+We are going to use the lunar lander and try to take different actions in it. If we don't have good policy yet, we are going to take actions randomly
+
+In each *test*, we'll have a tuple that has the state *s*, the action *a*, the reward value of *s* and the *goal state s'* and it will be a training example. We can take random guesses on the Q function
+
+![deep-learning-reinforcement-learning-example](./assets/module3/deep-learning-reinforcement-example1.png)
+
+The steps are:
+
+* Initialize Neural Network randomly as guess of Q(s, a)
+
+* Repeat:
+    * Take actions in the lunar lander. Get (s, a, R(s), s')
+
+    * **Replay Buffer**: store 10000 most recent (s, a, R(s), s')
+
+* Train the neural network
+    * Create training set of 10000 examples x= (s, a) and y = R(s) + γ max a' in (Q(s', a'))
+
+    * Train Q<sub>new</sub> (neural network model) such that Q<sub>new</sub>(s, a) = y (approximately)
+
+* Set Q = Q<sub>new</sub >
+
+## Algorithm Refinement
+
+There is a change to the neural network architecture that makes this algorithm much efficient
+
+Since in a state *s*, there is 4 possible actions, we'd have to carry out inference in the neural network separately 4 times to compute those 4 values so as to pick the action *a* that gives us the largest Q value. This is inneficient, as long as we have to carry out our inference four times from every single state
+
+It turns out that is way more efficient to train a single neural network to output all four of these values simultaneously
+
+Now, the input layer will have only the state *s* and the output layer will have 4 units (one for each state), Q(s, nothing), Q(s, left), Q(s, main), Q(s, right). Then, the neural network will compute simultaneously the Q value for all possible actions, so we run the inference only once and get all possible Q values
+
+![deep-reinforcement-learning-refinement](./assets/module3/deep-reinforcement-learning-refinement.png)
+
+### ε-greedy Policy
+
+In order to approximate Q(s, a), we must take some actions. How do we pick those actions? The most common way to do so it to use ε-greedy policy
+
+In some state *s*:
+
+* Option 1
+    * Pick the action *a* that maximizes the guessed Q(s, a)
+
+* Option 2 (ε-greedy policy; ε = 0.05)
+    * With probability 0.95, pick the action *a* that maximizes Q(s, a) (greedy action or exploitation step)
+
+    * **Exploration Step**: with probability 0.05, pick an action *a* randomly (not always try the best choice)
+
+Why would we want to pick an action *a* randomly?
+
+Let's say that there is some strange reason that Q(s, a) was initialized randomly so that the learning algorithm thinks that firing the main thruster is never a good idea, that is, Q(s, main) is always very slow
+
+Therefore, the neural network, since it's trying to pick the action *a* that maximizes Q(s, a), will never ever thruster the main thruster and it will never learn that sometimes fire the main thruster is a good idea
+
+A common practice is to:
+
+* Start ε high
+
+* Gradually decrease it
+
+The choice of ε is way importante since, depending on your choice, the algorithm can take 100 times more to learn for example (way worse than choosing a low learning rate)
+
+### Mini-Batch and Soft Update
+
+Mini-batch can speed up your reinforcement learning algorithm and it's also applicable to supervised learning
+
+Soft Update helps your reinforcement learning to do a better job to converge to a good solution
+
+Imagine that your dataset has over 100 million samples. On each gradient descent step, it computes the cost function over 100 million examples. So, it would be very slow
+
+The idea behing **mini-batch** is not use all 100 million training examples on every single iteration. Instead we may pick a smaller number, let's say 1000. Then, on each step, we would pick some subset of 1000 examples, so it requires much less time. Moreover, on each step, the subset may be different
+
+In Batch Learning, each iteration of gradient descent makes the optimal move to get to lowest cost function value. In contrary, in mini-batch learning, this doesn't happen on each step. It may do some bad choices and get away of the optimal solution. But, on average, it tends toward the global minimum (not reliably and sometime noisily), although it's very computacionally cheaper
+
+In Unsupervised Learning case, you stored 10000 most recent tuples. Using mini-batch, out of these 10000 tuples, you choose 1000 to train your model
+
+Now, let's talk about **soft update**. Remember that, on each step of deep reinforcement learning, we were setting Q equals to Q<sub>new</sub>, but what if Q function was better than Q<sub>new</sub>? You would've overwritten your better Q function with a worse one
+
+To avoid this situation, instead of setting Q = Q<sub>new</sub>, we set Q = 0.01Q<sub>new</sub> + 0.99Q for example
+
+Therefore, whenever we train a new neural network model, we are only going to accept a little bit of the new value
+
+It makes the reinforcement learning algorithm to converge more reliably (it will less probably oscillate or divert or have other undesireble properties)
+
+## Limitations of Reinforcement Learning
+
+* Much easier to get to work in a simulation than a real robot
+
+* Far fewer applications than supervised and unsupervised learning
