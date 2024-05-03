@@ -8,7 +8,7 @@ Instead of this, we're going to ask the algorithm to find something (a structure
 
 A clustering algorithm looks at a dataset and check if it can grouped into **clusters** (groups of points that are similar to each other)
 
-![clustering-algorithm](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/clustering_algorithm1.png)
+![clustering-algorithm](./assets/module1/clustering_algorithm1.png)
 
 ## Applications of clustering
 
@@ -20,7 +20,7 @@ A clustering algorithm looks at a dataset and check if it can grouped into **clu
 
 * Astronomical data analysis
 
-## K-means Algorithms
+## K-means Algorithm
 
 * **Cluster Centroids**: centers of the clusters
 
@@ -28,16 +28,16 @@ Firstly, the algorithm guesses (randomly) two centers of the two clusters (consi
 
 Then, it repeatly does two things:
 1. Assign points to cluster centroids
-    * It will go to each of the data points and verify if it is closer to a cluster of another, then assign the point to the closer cluster
+    * It will go to each of the data points and verify if it is closer to a cluster or another, then assign the point to the closer cluster
 2. Move cluster centroids
     * It will take an average of the points of each cluster, then
 
-![k-means-step1](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means_1.png)
-![k-means-step2](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means_2.png)
+![k-means-step1](./assets/module1/k-means_1.png)
+![k-means-step2](./assets/module1/k-means_2.png)
 
 At a certain time, there'll be no more changes to the points or to the centroids, then, at this point, the k-means clustering algorithm has converged, since applying the 2 steps doesn't result in any more changes
 
-![k-means](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means_3.png)
+![k-means](./assets/module1/k-means_3.png)
 
 **Algorithm**
 
@@ -52,24 +52,24 @@ At a certain time, there'll be no more changes to the points or to the centroids
     * Move cluster centroids
     ```
     for k = 1 to K:
-        uk = average (mean) of points assignedr to cluster k # on x and y axis
+        uk = average (mean) of points assigned to cluster k # on x and y axis
     ```
 
-There is a corner case to this algorithm: what if a cluster has 0 training set examples assigned to it?
+There is a **corner case** to this algorithm: what if a cluster has 0 training set examples assigned to it?
 
 That cluster will try to get the average of zero points but that is not defined
 
-If that ever happens, the most common thing to do is eliminating that cluster. On the other hand, in case you need that cluster, you could randomly reinicialize and hopes that cluster gets assigned to some points
+If that ever happens, the most common thing to do is **eliminating that cluster**. On the other hand, in case you need that cluster, you could **randomly reinicialize** and hopes that cluster gets assigned to some points
 
 ### K-means for clusters that are not well separated
 
-For instance, a company wants to defined the size of small, medium and large t-shirts. For that, it gets data about the height and weight of its customers. Then, you run k-means algorithm to get 3 clusters of that data (customer's height and weight)
+For instance, a company wants to define  the size of small, medium and large t-shirts. For that, it gets data about the height and weight of its customers. Then, you run k-means algorithm to get 3 clusters of that data (customer's height and weight)
 
-![k-means-not-well-separated-data](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-not-well-separated-data.png)
+![k-means-not-well-separated-data](./assets/module1/k-means-not-well-separated-data.png)
 
 ### Optimization Objective
 
-![k-means-optimization-objective](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-optimization-objective.png)
+![k-means-optimization-objective](./assets/module1/k-means-optimization-objective.png)
 
 The k-means cost functions is called **distortion**
 
@@ -85,29 +85,29 @@ Then, randomly choose K random examples. So, you would set u1, u2, ..., uk to th
 
 Depending on which cluster centroids you end up choosing, you might get different results, since k-means could *stop* in a local minima, in which k-means is trying to minimize the distortion cost function, but with the unfortunate choice of initialization it ended up stuck in a local minimum
 
-![k-means-random-initialization](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-random-initialization1.png)
+![k-means-random-initialization](./assets/module1/k-means-random-initialization1.png)
 
 Consequently, you can give k-means algorithm multiple shots to try to find the global minimum. But what if you run it thrice and get 3 different solutions? You'd have to compute the cost function of each solution, then pick up the one with the lowest cost value
 
 The number of times to run k-means is about 50-1000. Running it more than 1000 gets too expensive
 
-![k-means-random-initialization](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-random-initialization2.png)
+![k-means-random-initialization](./assets/module1/k-means-random-initialization2.png)
 
 **How to define how many clusters to use?**
 
 The answer is quite ambiguous, since different people may have different answers and, unsupervised learning algorithm, you're not given the right answers
 
-![k-means-number-of-clusters](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-number-of-clusters1.png)
+![k-means-number-of-clusters](./assets/module1/k-means-number-of-clusters1.png)
 
-There is a method called *elbow method*
+There is a method called **elbow method**
 
 You run k-means algorithm with different number of clusters, let's say from 1 to 8, and calculate the distortion cost function. Let's say that the cost function decreases very rapidly until the number of clusters equal to 3. Then, you're number of cluster should be 3.
 
-The elbow method is not recommeded as the cost function may decrease very smoothly, so you can't define with precision the *right* number of clusters
+The elbow method is not recommended as the cost function may decrease very smoothly, so you can't define with precision the *right* number of clusters
 
 But you can't choose the number K based only on the cost function as long as always the largest K will result in the lowest cost function value
 
-![k-means-number-of-clusters](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/k-means-number-of-clusters2.png)
+![k-means-number-of-clusters](./assets/module1/k-means-number-of-clusters2.png)
 
 Often, you want to get clusters for some later purpose, then you should evaluate k-means algorithm based on how well it performs on that later purpose
 
@@ -120,7 +120,7 @@ An **anomaly detection** algorithm looks at a dataset of normal events and learn
 
 For instance, let's say we're detecting anomaly of aircraft engines, given the heat generated (x<sub>1</sub>) and the vibration intensity (x<sub>2</sub>). Most of aircraft engines work well, so we train our algorithm. Then, when we have a new engine x<sub>test</sub>, we run this test in the algorithm to verify if it's okay or not. If there's an anomaly, we should inspect the engine further
 
-![anomaly-detection](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection1.png)
+![anomaly-detection](./assets/module1/anomaly-detection1.png)
 
 The most common technique is called **density estimation**
 
@@ -128,15 +128,15 @@ It builds a model that calculate the probability of x being seen in the dataset.
 
 With the new data example, you compute the probability of it, then if it is lower than a limit, you could say it is an anomaly for example. Otherwise, it's okay
 
-![density-estimation](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/density-estimation1.png)
+![density-estimation](./assets/module1/density-estimation1.png)
 
-![anomaly-detection-applications](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection2.png)
+![anomaly-detection-applications](./assets/module1/anomaly-detection2.png)
 
 ## Gaussian (Normal) Distribution
 
 To build an anomaly detection algorithm, we are going to use **Gaussian Distribution**
 
-![gaussian-distribution](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/gaussian_distribution1.png)
+![gaussian-distribution](./assets/module1/gaussian_distribution1.png)
 
 On the right side, you have a histogram with for instance 100 examples. The curve on the left indicates that, independing on how many examples you have, if you had to draw a histogram of these examples (let's say infinite), you would end up with the curve of the left side
 
@@ -146,7 +146,7 @@ The mean value μ affects the **center of the distribution**
 
 The variance value σ affects the **width and the height** of the Gaussian Distribution
 
-![gaussian-distribution-example](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/gaussian_distribution_example1.png) 
+![gaussian-distribution-example](./assets/module1/gaussian_distribution_example1.png) 
 
 We are going to build a model or estimate the probability for p(x), given:
 
@@ -166,9 +166,9 @@ The algorithm will tend to flag an example as anomalous if 1 or more features ar
 
 For each of the features x<sub>j</sub>, we're fitting a Gaussian Distribution
 
-![anomaly-detection-algorithm](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_algorithm.png)
+![anomaly-detection-algorithm](./assets/module1/anomaly_detection_algorithm.png)
 
-![anomaly-detection-example](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_example.png)
+![anomaly-detection-example](./assets/module1/anomaly_detection_example.png)
 
 ## The Importance of Real-number Evaluation
 
@@ -200,9 +200,9 @@ There are some possible evaluation matrics:
 
 ### Anomaly Detection vs Supervised Learning
 
-![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning1.png)
+![anomaly-detection-versus-supervised-learning](./assets/module1/anomaly_detection_vs_supervised_learning1.png)
 
-![anomaly-detection-versus-supervised-learning](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly_detection_vs_supervised_learning2.png)
+![anomaly-detection-versus-supervised-learning](./assets/module1/anomaly_detection_vs_supervised_learning2.png)
 
 ### Choosing what features to use
 
@@ -241,8 +241,8 @@ If you use, for instance, only one feature, some anomaly may seem fine. So, what
 
 The development process will often go through is: to train the model and then to see what anomallies in the cross validation set the algorithm is failing to detect. Then, look at those examples to see if that can inspire the creation of new features that would allow the algorithm to spot that examples takes on unusually large or unusually small values on the new features, so it can successfully flag those examples as anomalies
 
-![error-analysis-anomaly-detection](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection-error-analysis.png)
+![error-analysis-anomaly-detection](./assets/module1/anomaly-detection-error-analysis.png)
 
-![anomaly-detection-error-analysis](/Machine%20Learning%20Specialization/Unsupervised%20Learning,%20Recommenders,%20Reinforcement%20Learning/assets/module1/anomaly-detection-error-example.png)
+![anomaly-detection-error-analysis](./assets/module1/anomaly-detection-error-example.png)
 
 In the above example, it's unusually that the CPU is high but the network traffic is low, so we created a feature for this case
