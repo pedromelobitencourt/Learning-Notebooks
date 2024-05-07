@@ -58,7 +58,7 @@ Usually, when some teams are using Linear Activation Function, they say that the
 
 ## How to choose activation functions
 
-You can use different activation functions for different neurons in your neural network
+You can use different activation functions for different layers in your neural network
 
 ### Activation functions in the output layer
 
@@ -140,9 +140,9 @@ model = Sequential([
 
 # loss
 model.compile(loss=BinaryCrossentropy(from_logits=True))
-model.fit(X, Y, epochs=100)
 
 # fit
+model.fit(X, Y, epochs=100)
 logits = model(X)
 
 # predict
@@ -185,7 +185,7 @@ Given an input, there can be multiple outputs
 
 ![multilabel-classification-example1](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module2/multilabel_classification1.png)
 
-**How to builda multilabel classification model?**
+**How to build a multilabel classification model?**
 
 * You can treat each output as a separate machine learning problems
 

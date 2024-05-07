@@ -50,7 +50,7 @@ For perceived quality, we take as inputs *material* and *price*
 
 These 3 neurons grouped are called **layer**
 
-* **Layer**: it's a grouping of neurons whicch takes as inputs the same or similar features and that in turn outputs a few numbers (activation values) together
+* **Layer**: it's a grouping of neurons which takes as inputs the same or similar features and that in turn outputs a few numbers (activation values) together
 
 Then, we wire those neurons to another one (**output layer**) that outputs the probability of being a top seller
 
@@ -76,7 +76,7 @@ Let's see a face recognition example:
 
 In the first hidden layer, it may be neurons that are looking for very short lines or edges in the image
 
-In the second hidden layer, it may be neurons that might learn to group together lots of short lines or segments to look for parts faces
+In the second hidden layer, it may be neurons that might learn to group together lots of short lines or segments to look for face parts
 
 In the third hidden layer, it may be neurons that are aggregating different parts of faces to detect a face
 
