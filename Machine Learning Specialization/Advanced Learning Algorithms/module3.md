@@ -23,7 +23,7 @@ One way is, instead of training your model with the entire training set, you cou
 
 ![train-test-cost-error-functions-linear-regression](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module3/train_test_cost_error_functions_linear_regression.png)
 
-*J<sub>train</sub>(w, b)* will be low, but if *J<sub>test</sub>(w, b) is high, it's not good to generalize
+*J<sub>train</sub>(w, b)* will be low, but if *J<sub>test</sub>(w, b)* is high, it's not good to generalize
 
 Now, the train/test procedure for classification problem will be:
 
@@ -289,7 +289,7 @@ Software engineering may be needed for:
 
 ### Guidelines
 
-* Get a diverse team to brainstrome things that might go wrong, with emphasis on possible harm to vulnerable groups
+* Get a diverse team to brainstorm things that might go wrong, with emphasis on possible harm to vulnerable groups
 
 * Carry out literature search on standards for your industry
 
@@ -332,7 +332,7 @@ Computing *precision* and *recall*, helps to find if the algorithm is both reaso
 
 * High precision: if the model predicts that a patient has a disease, probably the patient does have it
 
-* High recall: if there is a patient with the disease, probably the algorithm will correctly identify that they do hav the disease
+* High recall: if there is a patient with the disease, probably the algorithm will correctly identify that he/she does have the disease
 
 Usually, there is a tradeoff between precision and recall
 
