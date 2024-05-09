@@ -40,7 +40,7 @@ For user 1, we could predict the rating for movie i as:
 
 w<sup>j</sup> x<sup>i</sup> + b<sup>j</sup> (just like linear regression)
 
-![predict-user-j-rating-for-movie-i](/assets/module2/predict-user-j-rating-for-movie-i.png)
+![predict-user-j-rating-for-movie-i](./assets/module2/predict-user-j-rating-for-movie-i.png)
 
 So, there is a different linear regression model for each user
 
@@ -48,19 +48,19 @@ So, there is a different linear regression model for each user
 
 The cost function for learning the parameters w<sup>j</sup> and b<sup>j</sup> for user j is the following:
 
-![cost-function](/assets/module2/cost-function1.png)
+![cost-function](./assets/module2/cost-function1.png)
 
 We must minimize the cost function
 
 It turns out that for recommender systems it would be convenient to actually eliminate the division by m<sup>j</sup> term
 
-![cost-function](/assets/module2/cost-function2.png)
+![cost-function](./assets/module2/cost-function2.png)
 
 But how can we learn the parameters w, b for all users?
 
 We have to minimize the following cost function:
 
-![cost-function-for-learning-all-users-parameters](/assets/module2/cost-function3.png)
+![cost-function-for-learning-all-users-parameters](/.assets/module2/cost-function3.png)
 
 If you use gradient descent algorithm or any other optimization algorithm, you'll have a pretty good set of parameters for predicting movie ratings for all the users
 
@@ -72,21 +72,21 @@ Firstly, let's assume that we have the parameters *w* and *b* for all users. Hav
 
 We could obtain those features *x* using linear systems
 
-![collaborative-filtering](/assets/module2/collaborative-filtering1.png)
+![collaborative-filtering](./assets/module2/collaborative-filtering1.png)
 
 As well, to get the values *x*, we can use a cost function and try to minimize it:
 
-![cost-function-for-features-x](/assets/module2/cost-function-features-x.png)
+![cost-function-for-features-x](./assets/module2/cost-function-features-x.png)
 
 But we could only come up with this equation, because we knew the features *w* and *b*. If we didn't know the parameters *w* and *b* and the features *x*, we could use the following approach:
 
-![cost-function-for-features-and-parameters](/assets/module2/cost-function-features-parameters.png)
+![cost-function-for-features-and-parameters](./assets/module2/cost-function-features-parameters.png)
 
 To minimize this cost function, we could:
 
 * use Gradient Descent
 
-![gradient-descent-using-collaborative-filtering-algorithm](/assets/module2/gradient-descent-collaborative-filtering-algorithm.png)
+![gradient-descent-using-collaborative-filtering-algorithm](./assets/module2/gradient-descent-collaborative-filtering-algorithm.png)
 
 **Collaborative Filtering** is gathering the data from multiple users to help you predict ratings
 
@@ -96,15 +96,15 @@ Many important applications of recommeder systems involve **Binary Label** where
 
 In the following example, 1 could mean that the user hit like or favorite button on that particular movie or that it watched the movie until the end
 
-![binary-label](/assets/module2/binary-labels-1.png)
+![binary-label](./assets/module2/binary-labels-1.png)
 
-![binary-labels-examples](/assets/module2/binary-labels-examples.png)
+![binary-labels-examples](./assets/module2/binary-labels-examples.png)
 
 For Binary Labels, we are going to predict that the probability of **y<sup>(i, j)</sup>** = 1. This is given by **g(w<sup>j</sup>x<sup>i</sup> + b<sup>j</sup>)**, where g(z) is the **sigmoid function**
 
 The cost function for Binary Application is:
 
-![binary-application-for-cost-function](/assets/module2/binary-application-cost-function.png)
+![binary-application-for-cost-function](./assets/module2/binary-application-cost-function.png)
 
 
 # Recommender Systems Implementation Detail
@@ -133,7 +133,7 @@ It turns out that by normalizing the mean of the different movie ratings to be z
 
 You could also normalize by the columns. It depends on the application which one is more reasonable. In this example, it would mean predicting the rating of a movie that hasn't been rated by any user
 
-![mean-normalization](/assets/module2/mean-normalization1.png)
+![mean-normalization](./assets/module2/mean-normalization1.png)
 
 ## TensorFlow Implementation
 

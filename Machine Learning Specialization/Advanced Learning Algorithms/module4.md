@@ -8,7 +8,7 @@ The ear shape can have 2 values: pointy or floppy
 
 The face shape can have 2 values: round or not round
 
-The whisper feature can have 2 values: present or absent
+The whisker feature can have 2 values: present or absent
 
 ![cat-classification-example](/Machine%20Learning%20Specialization/Advanced%20Learning%20Algorithms/assets/module4/cat_classification_1.png)
 
@@ -224,7 +224,7 @@ The sampling with replacement procedure causes the algorithm to explore a lot of
 
 It's a slightly changed random forest algorithm, that runs very quick
 
-You focused on misclassied examples
+We focus on misclassified examples
 
 We're going to look at the decision trees we've trained so far and look at what we're still not yet doing well
 
