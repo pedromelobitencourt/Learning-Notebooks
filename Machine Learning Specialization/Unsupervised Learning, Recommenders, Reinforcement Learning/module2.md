@@ -60,7 +60,7 @@ But how can we learn the parameters w, b for all users?
 
 We have to minimize the following cost function:
 
-![cost-function-for-learning-all-users-parameters](/.assets/module2/cost-function3.png)
+![cost-function-for-learning-all-users-parameters](./assets/module2/cost-function3.png)
 
 If you use gradient descent algorithm or any other optimization algorithm, you'll have a pretty good set of parameters for predicting movie ratings for all the users
 
@@ -285,7 +285,7 @@ We use a cost function J shown below:
 
 ![cost-function-deep-learning](./assets/module2/cost-function-deep-learning1.png)
 
-Depending on the parameters of the neural network, you may end up with different vectors for the users and for the movies. So, we train the modal so that we end up with vectors that result in small squared error
+Depending on the parameters of the neural network, you may end up with different vectors for the users and for the movies. So, we train the model so that we end up with vectors that result in small squared error
 
 After you've trained this model, you can use it to find similar items
 
@@ -313,7 +313,7 @@ Having to run neural network inference thousands of millions of times every time
 
 Many large scale recommender systems are implemented in two steps:
 
-* **Retrival**: during the retrieval step, we will generate a large list of plausible items candidates. This tries to cover a lot of possible things you might recommend to the user. You may add some items that the user is not likely to like
+* **Retrieval**: during the retrieval step, we will generate a large list of plausible items candidates. This tries to cover a lot of possible things you might recommend to the user. You may add some items that the user is not likely to like
     
     * For each of the last 10 movies watched by the user, we may get the 10 most similar movies
 
@@ -329,7 +329,7 @@ One question you may ask is: how many items do I retrieve in the retrieval step?
 
 Retrieving more items results in better performance, but slower recommendations
 
-To analyze/optimize the trade-off, cary out offline experiments to see if retrieving additional items results in more relevant recommendations
+To analyze/optimize the trade-off, carry out offline experiments to see if retrieving additional items results in more relevant recommendations
 
 ## Ethical Use of Recommender Systems
 
@@ -412,7 +412,7 @@ Then, we could "create" an axis and project the example onto the axis
 
 ![running-pca](./assets/module2/pca1.png)
 
-The points are quite spread apart and so the variation among those five points on z-axis is decently large, so we are capturing info of the original data
+The points are quite spread apart and so the variation among those five points on z-axis is decently large, so we are **capturing info of the original data**
 
 Choosing another z-axis, the projection of the points may be squished together, that is, their variance is much less than the original one, so you're capturing much less of the information of the original data
 

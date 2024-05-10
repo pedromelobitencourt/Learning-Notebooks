@@ -58,7 +58,7 @@ The concept of a return captures that rewards that you can get quicker are maybe
 
 ![mars-rover-example](./assets/module3/mars-rover-example3.png)
 
-In the fist case above, we always go to the left. Starting at the state, we would get a return of 50
+In the fist case above, we always go to the left. Starting at the state 0, we would get a return of 50
 
 In the second case, we always go to the right
 
@@ -196,7 +196,7 @@ So, in a state *s*, we're going to compute Q(s, nothing); Q(s, left); Q(s, main)
 
 **How can we use a neural network to output Q(s, a)?**
 
-We're going to use Bellman's equation to create a trainig set with lots of examples *x* and *y* and then, we'll use supervised learning
+We're going to use Bellman's equation to create a training set with lots of examples *x* and *y* and then, we'll use supervised learning
 
 We are going to use the lunar lander and try to take different actions in it. If we don't have good policy yet, we are going to take actions randomly
 
