@@ -50,3 +50,26 @@ It indicates where the infrastructure resides, who owns and manages it and how c
 Using cloud enables you to get instant access to open-source technologies without the need to install and configurey them locally
 
 Using the cloud also gives you access to the most up-to-date tools and libraries without the worrying of maintaining them and ensuring that they are up-to-date
+
+
+## Foundations of Big Data
+
+Big Data refers to the dynamic, large and disparate volumes of data being created by people, tools and machines
+
+It requires new, innovative and scalable technology to collect, host and analytically process the vast amount of data gathered
+
+### The V's of Big Data
+
+* **Velocity**: It's the speed at which data accumulates. Data is being generated extremely fast
+
+* **Volume**: It's the scale of the data or the increase in the amount of data stored
+    * Drivers of volume are: the increase in data sources, higher resolution sensors and scalable infrastructure
+
+* **Variety**: It's the diversity of the data. Different types of data, the data comes from different sources, machines, people and processes
+    * Drivers are: mobile technologies, social media, wearable technologies, geo technologies, video...
+
+* **Veracity**: It's the quality and the origin of data and its conformity to facts and accuracy
+    * Attributes are: consistency, completeness, integrity and ambiguity
+    * Drivers are: cost and need for traceability
+
+* **Value**: It's our ability and need to turn data into value
