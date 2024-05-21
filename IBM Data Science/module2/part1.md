@@ -126,6 +126,8 @@ The Big Data processing technologies provide ways to work with large sets of str
 
 ## Data Mining
 
+### Goal Set
+
 * The first step in **data mining** is set up goals for the exercise
     * you must idedntify the keys questions that need to be answered
 
@@ -185,3 +187,182 @@ The Big Data processing technologies provide ways to work with large sets of str
 ### Evaluating Mining Results
 
 * Formal evaluation could include testing the predictive capabilities of the models on observed data to see how effective and efficient the algorithms have been in reproducing data
+
+* You share yor results with stakeholders
+
+This entire process should be conducted iteratively as your results from this iteration will inform further data mining efforts
+
+## Glossary
+
+* **Analytics**: The process of examining data to draw conclusions and make informed decisions is a fundamental aspect of data science
+
+* **Big Data**: Vast amount of structured, semi-structured and unstructured data are characterized by its volume, velocity, veracity, variety and value
+
+* **Big Data Cluster**: A distributed computing environment comprising thousands or tens of thousands of interconnected computers that collectively store and process large data sets
+
+* **Broad Network Access**: The ability to access cloud resources via standard mechanisms and platforms (such as mobile devices, laptops and workstations over networks)
+
+* **Cloud Computing**: The delivery of on-demand computing resources over the Internet on a pay-for-use basis
+
+* **Cloud Deployment Models**: Categories that indicate where cloud infrastructure resides, who manages it and how cloud resources and services are made available to users
+
+# Deep Learning and Machine Learning
+
+### Big Data
+
+The terms refers to data sets that are so massive, so quickly built and so varied that they defy traditional analysis methods, such as you might perform with a relational database
+
+### Data Mining
+
+It refers to the process of automatically searching and analyzing data, discovering previously unrevealed patterns
+
+It involves preprocessing the data to prepare it and transforming it into an appropriate format
+
+Once this is done, insights and patterns are extracted using various tools and techniques, ranging from **Data Visualization**, **Machine Learning** and **Statistical Models**
+
+### Machine Learning
+
+Machine Learning is a subset of AI that uses computer algorithms to analyze data and make intelligent decisions based on what it has learned, without being explicitly programmed
+
+Machine Learning algorithms are trained with large sets of data and they learn from examples
+
+It enables machines to solve problems on their own and make accurate predictions
+
+
+### Deep Learning
+
+Deep Learning is a specialized subset of Machine Learning that uses layered neural networks to simulate human decision-making
+
+Deep Learning algorithms can label and categorize information and identify patterns
+
+
+### Neural Networks
+
+It takes inspiration from biological neural networks, although they work quite a bit differently
+
+A Neural Network is collection of small computing units called *neurons*, that take incoming data and learn to make decisions over time
+
+
+### Artificial Intellingence and Data Science
+
+Data Science is the process and method for extracting knowledge and insights from large volumes of data. It involves mathematics, statistical analysis, machine learning and more
+
+Data Science can use many of the AI techniques to derive insight from data (it can use Machine Learning and Deep Learning for example)
+
+## Generative AI and Data Science
+
+**Generative AI** is a subset of AI that focuses on producing new data rather than just analyzing existing data
+
+It allows computers to create content, such as: images, music, language, code, mimicking creations by people
+
+### How does Generative AI work?
+
+Deep Learning models like *Generative Adversarial Networks* (GANs) and *Variational Auto-encoders* (VAEs) are at the foundation of this technique
+
+These models create new instances that replicate the underlying distribution of the original data by learning patterns from enormous volumes of data
+
+Some applications are:
+
+* Natural Language Processing like OpeanAI's GPT-3
+
+* In healthcare, Generative AI can synthesize medical images, aiding in the training of medical professionals
+
+* Generative AI can create unique and visually artworks
+
+* Generate realistic environments, characters
+
+**But how does data scientists use Generative AI?**
+
+**Synthetic Data**
+
+Building data models takes a lot of data and sometimes data sets may not have enough data to build a model
+
+Consequently, interest in **synthetic data** as a tool for analysis and model creation has increased due to recent developments in generative AI, since Data scientists can augment their data sets using generative AI to create synthetic data
+
+Synthetic data is created with similar properties as the real data, such as its distribution, clustering and many other factors the AI learned about
+
+**Code Automation**:
+
+Data scientists, researches and analysts frequently don't have enough time to conceive, develop and evaluate a small number of hypotheses, leaving many other possibilities untested. Then, with Generative AI, data scientists can leverage generative AI to generate and test software code for construction analytical models
+
+With code automation, the data scientists can focus on higher-level tasks such as identifying and clarifying the problem the models intend to solve and evaluating hypotheses from a wider range of data sources
+
+**Uncover Insights**
+
+Generative AI can generate accurate business insights and comprehensive reports, making it possible to update these insights as the data evolves (automate updates)
+
+It can autonomously explore data to uncover hidden patterns and insights that might go unnoticed
+
+## Neural Networks and Deep Learning
+
+Neural Networks attempt to mimic the neurons and how our brain actually functions
+
+A Neural Network would have some inputs that would come in. These inputs would be fed into different processing nodes. These nodes would do some transformation on them and aggregate them and they could go to another level of nodes and so on...
+
+Finally an output would come out
+
+Before, in the 90s, people did not use neural networks so much, because it was computationally very expensive
+
+All of sudden, everything's changed when **Deep Learning** appeared
+
+Deep Learning is Neural Network in steroids. Humor aside, Deep Learning is Neural Network with multiple layers. It requires a lot of computer power to solve those layers
+
+Now, computers require GPU (Graphic Processing Unit) to use Deep Learning as long as there are a lot of algebra and linear algebra calculations involved in
+
+Deep Learning algorithms become more efficient as the amount of data increases in volume, unlike other machine learning algorithms which tend to plateau
+
+### Deep Learning Applications
+
+* Speech Recognition
+
+* People Recognition
+
+* Classifying images
+
+### Machine Learning Applications
+
+* Recommender Systems
+
+* Classifications
+
+* Cluster Analysis
+
+* Predictive Analytics
+
+* Fraud Detection
+
+## Regression
+
+It identifies correlation between inputs and outputs
+
+In medical science, regression models are being used to develop more effective medicines, improve the methods for operations and optimize resources for small and large hospitals
+
+We can use regression to predict house prices depending on a lot of features. We could conclude the following:
+
+* **Size of Homes**: The regression analysis confirmed that larger homes sell for more than smaller homes. This correlation was quantified, showing the magnitude of the price increase associated with additional square footage
+
+* **Additional Features**: The study found that an additional bathroom contributes more to the price of a house than an additional bedroom. The marginal increase in housing prices was higher for an additional bathroom, highlighting the specific value-added by this feature
+
+* **Proximity to Transport Infrastructure**: 
+    * **subways**: Homes located closer to subway stations sold for higher prices compared to those farther away. Proximity to subways was positively correlated with housing prices
+
+    * **highways/freeways**: In contrast, homes near highways or freeways sold for less than those located farther from such infrastructure. The negative impact on housing prices was quantified in the analysis
+
+* **Proximity to Shopping Centers**: The impact of proximity to large shopping centers on housing prices was found to be nonlinear
+    * Houses very close (less than 2.5 km) to shopping centers sold for less than those located farther away.
+
+    * Houses located within a moderate distance (between 2.5 km and 5 km) from shopping centers sold for more than those farther away, indicating an optimal distance range for positive impact on housing prices
+
+* **Distance from Downtown**: Housing values in Toronto were found to decline with increasing distance from the downtown area. The regression analysis quantified this decline, providing precise measurements of the impact of distance from the city center on property values
+
+### Glossary
+
+* **Bayesian Analysis**: A statistical technique that uses Bayes' theorem to update probabilities based on new evidence
+
+* **Business Insights**: Accurate insights and reports generated by generative AI. It can be updated as data evolves, enhancing decision-making and uncovering hidden patterns
+
+* **Cluster Analysis**: The process of grouping similar data points together based on certain features or attributes
+
+* **Market Basket Analysis**: Analyzing which goods tend to be bought together. It's often used for marketing insights
+
+* **Predictive Analytics**: Using machine learning techniques to predict future outcomes or events
