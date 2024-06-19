@@ -109,3 +109,63 @@ For the case study, a decision tree classification model was used to identify th
 The decision tree classifier provides both the predicted outcome, as well as the likelihood of that outcome, based on the proportion at the dominant outcome
 
 From this information, the analysts can obtain the readmission risk or the likelihood of a yes for each patient
+
+## Data Requirements
+
+This section can be seen as cooking with data. Each step is critical in making the meal
+
+If the problem that needs to be solved is the recipe, so to speak, and data is an ingredient, then the data scientist needs to identify: which ingredients are required, how to source or to collect them, how to work with them and how to prepare the data to meet the desired outcome
+
+Let's define the data requirements for decision-tree classification. This includes identifying the necessary data content, formats and sources for initial data collection
+
+### Case Study
+
+Let's select a suitable patient cohort from the health insurance providers member base
+
+In order to compile the complete clinical histories, 3 criteria were identified:
+
+* A patient needed to be admitted as in-patient within the provider service area (to have access to the necessary information)
+
+* Focus on patients with a primary diagnosis of congestive heart failure during one full year
+
+* A patient must have had continuous enrollment for at least six months (prior to the primary admission for congestive heart failure)
+
+Hence, the content, formats, representations were defined
+
+Congestive heart failure patients with other significant medical conditions were excluded from the study, because their data could skew the analysis
+
+* One record per patient with columns representing variable
+
+* Content covering all aspects of each patient's clinical history
+
+
+## Data Collection
+
+After the initial data collection is performed, an assessment by the data scientist takes place to determine whether or not they have what they need
+
+Some data might be more difficult to obtain or cost more than initially thought
+
+In this phase, the data requirements are revised and decisions are made as to whether or not the collection requires more or less data
+
+After the data is collected, the data scientist will have a good understanding of what they will be working with. Techniques such as decriptive statistics and visualization can be applied to the data set, to assess the content, quality and initial insights about the data
+
+**Gaps** in data will be identified and plans to either fill or make substitutions will have to be made
+
+
+### Case Study
+
+**Collecting data** requires that you know the source or know where to find the data elements that are needed
+
+In the context of our case study, this includes: demographic, clinical and coverage information of patients, provider information, claims records as well as pharmaceutical and other information related to all the diagnoses of the congestive heart failure patients
+
+Let's say that certain drug information was also needed, but that data source was not yet integrated with the rest of the data sources
+
+This leads to an important point: it is alright to defer decisions about unavailable data and attempt to acquire it at a later stage
+
+For example, this can even be done after getting some intermediate results from the predictive modeling.
+
+If those results suggest that the drug information might be important in obtaining a good model, then the time to try to get it would be invested
+
+**DBAs and programmers often work together to extract data from various sources and then merge it**
+
+At this state, if necessary, data scientists and analytics team members can discuss various ways to better manage their data, including automating certain processes in the database, so that data collection is easier and faster
