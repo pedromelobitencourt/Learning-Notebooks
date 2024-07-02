@@ -308,3 +308,133 @@ print(add(1, 2)) # 3
 
 # Exception Handling
 
+An exception is an error that happens during the execution of a program
+
+When that error occurs, Python generates an exception that can be handled, which avoids your program from crashing
+
+## Try and Except
+
+You can use `try` and `except` to handle exceptions
+
+The `try` block lets you test a block of code for errors
+
+The `except` block lets you handle the error
+
+```python
+try:
+    print(x)
+except:
+    print("An exception occurred")
+```
+
+### Specific Exceptions
+
+You can define what kind of error to catch
+
+```python
+try:
+    print(x)
+except NameError:
+    print("Variable x is not defined")
+except:
+    print("Something else went wrong")
+```
+
+### Finally
+
+The `finally` block lets you execute code, regardless of the result of the `try` and `except` blocks
+
+```python
+
+## Else
+
+You can use the `else` keyword to define a block of code to be executed if no errors were raised
+
+```python
+try:
+    print("Hello")
+except:
+    print("Something went wrong")
+else:
+    print("Nothing went wrong")
+```
+
+### Else
+
+You can use the `else` keyword to define a block of code to be executed if no errors were raised
+
+```python
+try:
+    print("Hello")
+except:
+    print("Something went wrong")
+else:
+    print("Nothing went wrong")
+```
+
+
+# Objects and Classes
+
+Everything in Python is an object, with its properties and methods
+
+A Class is like an object constructor, or a "blueprint" for creating objects
+
+Everytime you create a new instance of a class, you create a new object with its own **properties** and **methods**
+
+## Defining a Class
+
+To create a class, use the `class` keyword, followed by the class name and a colon
+
+```python
+class Circle:
+    radius = 0
+    color = ""
+
+    def __init__(self, radius, color): # constructor
+        self.radius = radius
+        self.color = color
+
+    def area(self):
+        return 3.14159 * self.radius ** 2
+
+    def perimeter(self):
+        return 2 * 3.14159 * self.radius
+```
+
+## Creating an Object
+
+Now we can use the class named `Circle` to create objects
+
+```python
+c1 = Circle(10, "red")
+c2 = Circle(5, "blue")
+```
+
+## Accessing Object Properties
+
+You can access object properties using the dot `.` operator
+
+```python
+print(c1.radius) # 10
+print(c2.color) # blue
+```
+
+## Changing Object Properties
+
+You can change object properties using the dot `.` operator
+
+```python
+c1.color = "green"
+print(c1.color) # green
+```
+
+## Object Methods
+
+Objects can also contain methods
+
+Methods in objects are functions that belong to the object
+
+```python
+print(c1.area()) # 314.159
+print(c2.perimeter()) # 31.4159
+```
